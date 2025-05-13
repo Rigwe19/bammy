@@ -1,23 +1,54 @@
 import { type FunctionComponent, useCallback, useState } from 'react';
-import { FaFacebookF, FaInstagram, FaPlay, FaXTwitter, FaYoutube } from 'react-icons/fa6';
+import { FaFacebookF, FaInstagram, FaXTwitter, FaYoutube } from 'react-icons/fa6';
 import { LuMenu } from 'react-icons/lu';
 import ContactForm from "./components/ContactForm";
 import PortalPopup from "./components/PortalPopup";
 import PrivacyPolicy from "./components/PrivacyPolicy";
 import TermsAndConditions from "./components/TermsAndConditions";
+// import FsLightbox from "fslightbox-react";
 // import { Swiper, SwiperSlide } from 'swiper/react';
 // import 'swiper/css';
 
+// const gallery = {
+// 	family: [
+// 		'/images/family/1.webp',
+// 		'/images/family/2.webp',
+// 		// '/images/family/1.webp',
+// 		// '/images/family/1.webp',
+// 		// '/images/family/1.webp',
+// 	],
+// 	set: [
+// 		'/images/set/1.webp',
+// 		'/images/set/2.webp',
+// 		'/images/set/3.webp',
+// 		'/images/set/4.webp',
+// 		'/images/set/5.webp',
+// 	],
+// 	travel: [
+// 		'/images/travel/1.webp',
+// 		'/images/travel/2.webp',
+// 		'/images/travel/3.webp',
+// 		'/images/travel/4.webp',
+// 		'/images/travel/5.webp',
+// 		'/images/travel/6.webp',
+// 	]
+// }
 
 
 const App: FunctionComponent = () => {
 	const [isContactFormOpen, setContactFormOpen] = useState(false);
 	const [isPrivacyPolicyOpen, setPrivacyPolicyOpen] = useState(false);
 	const [isTermsAndConditionsOpen, setTermsAndConditionsOpen] = useState(false);
-
+	// const [toggler, setToggler] = useState(false);
+	// const [productIndex, setProductIndex] = useState<'set' | 'travel' | 'family'>('family');
 	const openContactForm = useCallback(() => {
 		setContactFormOpen(true);
 	}, []);
+
+	// const handleImageClick = (type: 'set' | 'travel' | 'family') => {
+		// setProductIndex(type)
+		// setToggler(true)
+	// }
 
 	const closeContactForm = useCallback(() => {
 		setContactFormOpen(false);
@@ -207,12 +238,13 @@ const App: FunctionComponent = () => {
 					<div className="md:w-full flex flex-col items-center justify-start text-left md:text-13xl text-[20px] text-darkslategray-100 font-helvetica">
 						<div className="md:w-full flex flex-col items-start justify-center gap-10">
 							<div className="self-stretch flex flex-col md:flex-row items-start justify-start gap-8">
-								<div className="flex-1 relative max-w-full overflow-hidden aspect-video rounded-8xs">
+								{/* <div >
 									<img className="object-cover w-full h-full" alt="" src="/images/films/twin_deception.webp" />
 									<div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex rounded-full justify-center items-center bg-black/40 size-25.5">
 										<FaPlay size={48} className="text-white" />
 									</div>
-								</div>
+								</div> */}
+								<iframe className="flex-1 relative max-w-full overflow-hidden aspect-video rounded-8xs" src="https://www.youtube.com/embed/GwwLna5zxpk?si=ICzX2MGYUSbl7PeI" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
 								<div className="flex-1 flex flex-col items-start justify-start">
 									<div className="self-stretch flex flex-col items-start justify-start gap-8">
 										<div className="self-stretch flex flex-col items-start justify-start gap-5">
@@ -227,12 +259,13 @@ const App: FunctionComponent = () => {
 								</div>
 							</div>
 							<div className="self-stretch flex flex-col md:flex-row items-start justify-start gap-8">
-								<div className="flex-1 relative max-w-full overflow-hidden aspect-video rounded-8xs">
+								{/* <div className="flex-1 relative max-w-full overflow-hidden aspect-video rounded-8xs">
 									<img className="object-cover w-full h-full" alt="" src="/images/films/love_in_every_word.webp" />
 									<div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex rounded-full justify-center items-center bg-black/40 size-25.5">
 										<FaPlay size={48} className="text-white" />
 									</div>
-								</div>
+								</div> */}
+								<iframe className="flex-1 relative max-w-full overflow-hidden aspect-video rounded-8xs" src="https://www.youtube.com/embed/bslcx4LRFL0?si=4bAV6XV0bwgGJnBk" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
 								<div className="flex-1 flex flex-col items-start justify-start gap-3">
 									<div className="self-stretch flex flex-col items-start justify-start gap-5">
 										<div className="self-stretch flex flex-col items-start justify-between">
@@ -245,12 +278,13 @@ const App: FunctionComponent = () => {
 								</div>
 							</div>
 							<div className="self-stretch flex flex-col md:flex-row items-start justify-start gap-8">
-								<div className="flex-1 relative max-w-full overflow-hidden aspect-video rounded-8xs">
+								{/* <div >
 									<img className="object-cover w-full h-full" alt="" src="/images/films/a_merry_side_of_you.webp" />
 									<div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex rounded-full justify-center items-center bg-black/40 size-25.5">
 										<FaPlay size={48} className="text-white" />
 									</div>
-								</div>
+								</div> */}
+								<iframe className="flex-1 relative max-w-full overflow-hidden aspect-video rounded-8xs" src="https://www.youtube.com/embed/Slxm189-MXk?si=cBlWYY2T5TEdZUIN" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
 								<div className="flex-1 flex flex-col items-start justify-start gap-3">
 									<div className="self-stretch flex flex-col items-start justify-start gap-5">
 										<div className="self-stretch flex flex-col items-start justify-between">
@@ -263,12 +297,13 @@ const App: FunctionComponent = () => {
 								</div>
 							</div>
 							<div className="self-stretch flex flex-col md:flex-row items-start justify-start gap-8">
-								<div className="flex-1 relative max-w-full overflow-hidden aspect-video rounded-8xs">
+								{/* <div >
 									<img className="object-cover w-full h-full" alt="" src="/images/films/cupcake_for_val.webp" />
 									<div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex rounded-full justify-center items-center bg-black/40 size-25.5">
 										<FaPlay size={48} className="text-white" />
 									</div>
-								</div>
+								</div> */}
+								<iframe className="flex-1 relative max-w-full overflow-hidden aspect-video rounded-8xs" src="https://www.youtube.com/embed/KGkWFuk9xUE?si=_y9JoFmoGzjqbliV" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
 								<div className="flex-1 flex flex-col items-start justify-start gap-3">
 									<div className="self-stretch flex flex-col items-start justify-start gap-5">
 										<div className="self-stretch flex flex-col items-start justify-between">
@@ -292,7 +327,7 @@ const App: FunctionComponent = () => {
 							<i className="self-stretch relative">Interview <span className="font-dm-sans">&</span> Media</i>
 						</div>
 						<div className="grid md:grid-cols-3 items-start justify-start gap-8 text-left text-sm font-helvetica">
-							<div className="flex flex-col items-start justify-start gap-5">
+							<a href="https://www.thisdaylive.com/index.php/2025/04/05/bambam-i-see-every-script-as-opportunity-to-step-into-someone-elses-shoes-bring-their-story-to-life/" target="_blank" className="flex flex-col items-start justify-start gap-5">
 								<img className="self-stretch relative rounded-8xs max-w-full overflow-hidden h-[281px] shrink-0 object-cover" alt="" src="/images/interviews/this_day.png" />
 								<div className="self-stretch flex flex-col items-start justify-start">
 									<div className="md:w-[404px] flex flex-col items-start justify-start gap-3">
@@ -300,8 +335,8 @@ const App: FunctionComponent = () => {
 										<div className="self-stretch relative text-xl md:text-2xl">BamBam: I See Every Script as Opportunity to Step into Someone Else’s Shoes, Bring Their Story to Life</div>
 									</div>
 								</div>
-							</div>
-							<div className="flex flex-col items-start justify-start gap-5">
+							</a>
+							<a  href="https://edition.cnn.com/2019/04/09/africa/fela-kalakuta-queens-south-africa-intl/index.html" target="_blank" className="flex flex-col items-start justify-start gap-5">
 								<img className="self-stretch relative rounded-8xs max-w-full overflow-hidden h-[281px] shrink-0 object-cover object-center" alt="" src="/images/interviews/cnn.png" />
 								<div className="self-stretch flex flex-col items-start justify-start">
 									<div className="md:w-[404px] flex flex-col items-start justify-start gap-3">
@@ -311,8 +346,8 @@ const App: FunctionComponent = () => {
 										</div>
 									</div>
 								</div>
-							</div>
-							<div className="flex flex-col items-start justify-start gap-5">
+							</a>
+							<a href="https://www.youtube.com/live/_d1Py97mIHA" target="_blank" className="flex flex-col items-start justify-start gap-5">
 								<img className="self-stretch relative rounded-8xs max-w-full overflow-hidden h-[281px] shrink-0 object-cover" alt="" src="/images/interviews/show_off.jpg" />
 								<div className="self-stretch flex flex-col items-start justify-start">
 									<div className="md:w-[404px] flex flex-col items-start justify-start gap-3">
@@ -320,11 +355,11 @@ const App: FunctionComponent = () => {
 										<div className="self-stretch relative text-xl md:text-2xl inline-block h-24 shrink-0">God Just Decided To Show Me Off” — Bambam on The Word success</div>
 									</div>
 								</div>
-							</div>
+							</a>
 						</div>
 					</div>
 				</div>
-				<div className="w-full px-20 md:flex flex-col items-center justify-center py-[100px] px-0 box-border gap-12 z-[4]">
+				<div className="w-full md:px-20 md:flex flex-col items-center justify-center py-[100px] px-0 box-border gap-12 z-[4]">
 					<div className="self-stretch flex flex-col items-start justify-start">
 						<i className="self-stretch relative">Life</i>
 					</div>
@@ -336,13 +371,13 @@ const App: FunctionComponent = () => {
 							</div>
 							<div className="self-stretch flex flex-col items-center justify-start gap-[42px]">
 								<div className="self-stretch flex flex-col md:flex-row items-end justify-start gap-8">
-									<img className="w-1/3 relative rounded-8xs h-[633px] overflow-hidden shrink-0 object-cover" alt="" src="/images/set/1.webp" />
-									<img className="self-stretch w-2/3 relative rounded-8xs h-[633px] overflow-hidden shrink-0 object-cover" alt="" src="/images/set/2.jpg" />
+									<img className="md:w-1/3 relative rounded-8xs md:h-[633px] overflow-hidden shrink-0 object-cover" alt="" src="/images/set/1.webp" />
+									<img className="self-stretch md:w-2/3 relative rounded-8xs md:h-[633px] overflow-hidden shrink-0 object-cover" alt="" src="/images/set/2.jpg" />
 								</div>
 								<div className="self-stretch flex flex-col md:flex-row items-center justify-start gap-8">
-									<img className="w-1/3 relative rounded-8xs h-[418px] overflow-hidden shrink-0 object-cover" alt="" src="/images/set/3.webp" />
-									<img className="w-1/3 relative rounded-8xs h-[418px] overflow-hidden shrink-0 object-cover" alt="" src="/images/set/4.webp" />
-									<img className="w-1/3 relative rounded-8xs h-[418px] overflow-hidden shrink-0 object-cover" alt="" src="/images/set/5.webp" />
+									<img className="md:w-1/3 relative rounded-8xs md:h-[418px] overflow-hidden shrink-0 object-cover" alt="" src="/images/set/3.webp" />
+									<img className="md:w-1/3 relative rounded-8xs md:h-[418px] overflow-hidden shrink-0 object-cover" alt="" src="/images/set/4.webp" />
+									<img className="md:w-1/3 relative rounded-8xs md:h-[418px] overflow-hidden shrink-0 object-cover" alt="" src="/images/set/5.webp" />
 
 								</div>
 							</div>
@@ -616,6 +651,11 @@ const App: FunctionComponent = () => {
 				</div>
 			</div>
 		</div>
+		{/* <FsLightbox
+				toggler={toggler}
+				sources={gallery[productIndex]}
+				key={productIndex}
+			/> */}
 		{isContactFormOpen && (
 			<PortalPopup
 				overlayColor="rgba(0, 0, 0, 0.25)"

@@ -1,4 +1,5 @@
 import { type FunctionComponent } from 'react';
+import { FaEnvelope, FaPhone } from 'react-icons/fa6';
 
 
 export type ContactFormType = {
@@ -25,34 +26,34 @@ const ContactForm:FunctionComponent<ContactFormType> = ({ className="" }) => {
             						<div className="self-stretch flex flex-row items-start justify-start">
               							<div className="flex-1 relative leading-[10.94px] font-semibold">Name</div>
             						</div>
-            						<div className="self-stretch border-gray-700 border-solid border-b-[0.7px] flex flex-col items-start justify-start text-[10.94px] text-gray-700">
-              							<div className="self-stretch relative bg-white h-0" />
+            						<input placeholder="Full name" className="self-stretch border-gray-700 border-solid border-b-[0.7px] flex flex-col items-start justify-start text-[10.94px] text-gray-700 focus-visible:outline-none" />
+              							{/* <div className="self-stretch relative bg-white h-0" />
               							<div className="self-stretch flex flex-row items-start justify-start py-[8.2px] px-[10.9px]">
                 								<div className="flex-1 relative leading-[16.4px]">Full name</div>
               							</div>
-            						</div>
+            						</input> */}
           					</div>
           					<div className="self-stretch flex flex-col items-start justify-start gap-[8.2px] text-darkslategray-100 font-helvetica">
             						<div className="self-stretch flex flex-row items-start justify-start">
               							<div className="flex-1 relative leading-[10.94px]">Email</div>
             						</div>
-            						<div className="self-stretch border-gray-700 border-solid border-b-[0.7px] flex flex-col items-start justify-start text-[10.94px] text-gray-700">
-              							<div className="self-stretch relative bg-white h-0" />
+            						<input placeholder="email@gmail.com" className="self-stretch border-gray-700 border-solid border-b-[0.7px] flex flex-col items-start justify-start text-[10.94px] text-gray-700 focus-visible:outline-none" />
+              							{/* <div className="self-stretch relative bg-white h-0" />
               							<div className="self-stretch flex flex-row items-start justify-start py-[8.2px] px-[10.9px]">
                 								<div className="flex-1 relative leading-[16.4px]">email@gmail.com</div>
               							</div>
-            						</div>
+            						</input> */}
           					</div>
           					<div className="self-stretch flex flex-col items-start justify-start gap-[8.2px]">
             						<div className="self-stretch flex flex-row items-start justify-start">
               							<div className="flex-1 relative leading-[10.94px] font-semibold">Organization</div>
             						</div>
-            						<div className="self-stretch border-gray-700 border-solid border-b-[0.7px] flex flex-col items-start justify-start text-[10.94px] text-gray-700">
-              							<div className="self-stretch relative bg-white h-0" />
+            						<input placeholder="Enter Services" className="self-stretch border-gray-700 border-solid border-b-[0.7px] flex flex-col items-start justify-start text-[10.94px] text-gray-700 focus-visible:outline-none" />
+              							{/* <div className="self-stretch relative bg-white h-0" />
               							<div className="self-stretch flex flex-row items-start justify-start py-[8.2px] px-[10.9px]">
                 								<div className="flex-1 relative leading-[16.4px]">Enter Services</div>
               							</div>
-            						</div>
+            						</div> */}
           					</div>
           					<div className="self-stretch flex flex-col items-start justify-start gap-[8.2px]">
             						<div className="self-stretch flex flex-row items-start justify-start">
@@ -168,12 +169,14 @@ const ContactForm:FunctionComponent<ContactFormType> = ({ className="" }) => {
         				</div>
       			</div>
       			<div className="flex flex-row items-start justify-start gap-[21.9px] text-left text-sm font-nunito">
-        				<div className="flex flex-row items-center justify-center gap-[5.5px]">
-          					<img className="w-[34.4px] rounded-[41.27px] h-[32.8px] overflow-hidden shrink-0" alt="" src="tabler:mail.svg" />
+        				<div className="flex flex-col md:flex-row items-center justify-center gap-[5.5px]">
+          					{/* <img className="w-[34.4px] rounded-[41.27px] h-[32.8px] overflow-hidden shrink-0" alt="" src="tabler:mail.svg" /> */}
+							<FaEnvelope size={24} />
           					<div className="relative leading-[16.4px]">bament@gmail.com</div>
         				</div>
-        				<div className="flex flex-row items-center justify-start gap-[5.5px]">
-          					<img className="w-[32.8px] rounded-[29.73px] h-[32.8px] overflow-hidden shrink-0" alt="" src="ph:phone-fill.svg" />
+        				<div className="flex flex-col md:flex-row items-center justify-start gap-[5.5px]">
+          					{/* <img className="w-[32.8px] rounded-[29.73px] h-[32.8px] overflow-hidden shrink-0" alt="" src="ph:phone-fill.svg" /> */}
+							<FaPhone size={24} />
           					<div className="relative leading-[16.4px]">+234 817 347 7464</div>
         				</div>
       			</div>
