@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+@import url("https://fonts.cdnfonts.com/css/helvetica-neue-5");
+@import url("https://fonts.cdnfonts.com/css/ahganirya");
+@import url("/fonts/stylesheet.css");
+@import "tailwindcss";
+
+@theme {
+  --font-ahganirya: "Ahganirya";
+  --font-helvetica: "Helvetica Neue";
+  --font-dm-sans: "DM Sans";
+  --font-worcester-serial: "Worcester Serial";
+  --font-montserrat: "Montserrat";
+  --font-nunito: "Nunito";
+
+  /* --color-primary: #1279e0; */
+
+  --color-whitesmoke: #f5f5f5;
+  --color-silver: #c4b9a5;
+  --color-darkslategray-100: #383232;
+  --color-darkslategray-200: rgba(56, 50, 50, 0.5);
+  --color-darkolivegreen: #89734b;
+  --color-seashell: #f6f3ed;
+  --color-gray-100: #402e32;
+  --color-gray-200: #38282c;
+  --color-gray-300: rgba(56, 40, 44, 0.8);
+  --color-gray-400: rgba(56, 40, 44, 0.4);
+  --color-gray-500: rgba(56, 40, 44, 0.7);
+  --color-gray-600: rgba(64, 46, 50, 0.2);
+  --color-gray-700: rgba(56, 40, 44, 0.2);
+  --color-gray-800: rgba(56, 40, 44, 0.3);
+  --color-gray-900: rgba(255, 255, 255, 0);
+}
+
+body {
+  @apply leading-[normal] m-0;
+}
+@layer base {
+  :root {
+    --border-radius-3xs: 10px;
+    --border-radius-981xl: 1000px;
+    --border-radius-lg: 18px;
+    --border-radius-8xs: 5px;
+    --border-radius-6xs-8: 6.8px;
+
+    --padding-13xl: 32px;
+    --padding-11xs-6: 1.6px;
+    --padding-81xl: 100px;
+    --padding-21xl: 40px;
+    --padding-41xl: 60px;
+    --padding-xl: 20px;
+    --padding-4xs-2: 8.2px;
+    --padding-2xs-9: 10.9px;
+
+    /* --font-size-xl: 20px;
+    --font-size-base: 16px;
+    --font-size-lg: 18px; */
+    --font-size-29xl: 48px;
+    /* --font-size-5xl: 24px; */
+    --font-size-9xl: 28px;
+    /* --font-size-sm: 14px; */
+    --font-size-13xl: 32px;
+    --font-size-2xs-9: 10.9px;
+    --font-size-inherit: inherit;
+  }
+  *,
+  ::before,
+  ::after {
+    border-width: 0;
+  }
+}
+@layer utilities {
+  .rounded-3xs {
+    border-radius: var(--border-radius-3xs);
+  }
+  .rounded-981xl {
+    border-radius: var(--border-radius-981xl);
+  }
+  .rounded-lg {
+    border-radius: var(--border-radius-lg);
+  }
+  .rounded-8xs {
+    border-radius: var(--border-radius-8xs);
+  }
+  .rounded-6xs-8 {
+    border-radius: var(--border-radius-6xs-8);
+  }
+
+  .p-13xl {
+    padding: var(--padding-13xl);
+  }
+  .p-11xs-6 {
+    padding: var(--padding-11xs-6);
+  }
+  .p-81xl {
+    padding: var(--padding-81xl);
+  }
+  .p-21xl {
+    padding: var(--padding-21xl);
+  }
+  .p-41xl {
+    padding: var(--padding-41xl);
+  }
+  .p-xl {
+    padding: var(--padding-xl);
+  }
+  .p-4xs-2 {
+    padding: var(--padding-4xs-2);
+  }
+  .p-2xs-9 {
+    padding: var(--padding-2xs-9);
+  }
+
+  /* .text-xl {
+    font-size: var(--font-size-xl);
+  }
+  .text-base {
+    font-size: var(--font-size-base);
+  }
+  .text-lg {
+    font-size: var(--font-size-lg);
+  } */
+  .text-29xl {
+    font-size: var(--font-size-29xl);
+  }
+  /* .text-5xl {
+    font-size: var(--font-size-5xl);
+  } */
+  .text-9xl {
+    font-size: var(--font-size-9xl);
+  }
+  /* .text-sm {
+    font-size: var(--font-size-sm);
+  } */
+  .text-13xl {
+    font-size: var(--font-size-13xl);
+  }
+  .text-2xs-9 {
+    font-size: var(--font-size-2xs-9);
+  }
+  .text-inherit {
+    font-size: var(--font-size-inherit);
+  }
+}

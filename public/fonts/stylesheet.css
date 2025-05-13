@@ -1,0 +1,109 @@
+@font-face {
+  font-family: "Worcester Serial";
+  src: local("/fonts/Worcester Serial Bold"),
+    local("/fonts/WorcesterSerialBold"),
+    url("/fonts/WorcesterSerialBold.woff2") format("woff2"),
+    url("/fonts/WorcesterSerialBold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Worcester Serial";
+  src: local("/fonts/Worcester Serial Heavy Italic"),
+    local("/fonts/WorcesterSerialHeavyItalic"),
+    url("/fonts/WorcesterSerialHeavyItalic.woff2") format("woff2"),
+    url("/fonts/WorcesterSerialHeavyItalic.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Worcester Serial";
+  src: local("Worcester Serial Heavy Regular"),
+    local("WorcesterSerialHeavyRegular"),
+    url("WorcesterSerialHeavyRegular.woff2") format("woff2"),
+    url("WorcesterSerialHeavyRegular.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Worcester Serial";
+  src: local("Worcester Serial Heavy Italic"),
+    local("WorcesterSerialHeavyItalic"),
+    url("WorcesterSerialHeavyItalic.woff2") format("woff2"),
+    url("WorcesterSerialHeavyItalic.woff") format("woff");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Worcester Serial";
+  src: local("Worcester Serial Medium Italic"),
+    local("WorcesterSerialMediumItalic"),
+    url("WorcesterSerialMediumItalic.woff2") format("woff2"),
+    url("WorcesterSerialMediumItalic.woff") format("woff");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Worcester Serial";
+  src: local("Worcester Serial Italic"),
+    local("WorcesterSerialItalic"),
+    url("WorcesterSerialItalic.woff2") format("woff2"),
+    url("WorcesterSerialItalic.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Worcester Serial";
+  src: local("Worcester Serial Medium Regular"),
+    local("WorcesterSerialMediumRegular"),
+    url("WorcesterSerialMediumRegular.woff2") format("woff2"),
+    url("WorcesterSerialMediumRegular.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Worcester Serial";
+  src: local("Worcester Serial Regular"),
+    local("WorcesterSerialRegular"),
+    url("WorcesterSerialRegular.woff2") format("woff2"),
+    url("WorcesterSerialRegular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* @font-face {
+  font-family: "Worcester Serial Xbold";
+  src: local("Worcester Serial Xbold Regular"),
+    local("WorcesterSerialXboldRegular"),
+    url("WorcesterSerialXboldRegular.woff2") format("woff2"),
+    url("WorcesterSerialXboldRegular.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Worcester Serial Xbold";
+  src: local("Worcester Serial Xbold Italic"),
+    local("WorcesterSerialXboldItalic"),
+    url("WorcesterSerialXboldItalic.woff2") format("woff2"),
+    url("WorcesterSerialXboldItalic.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+} */
