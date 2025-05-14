@@ -1,4 +1,5 @@
-import { type FunctionComponent, useCallback, useState } from 'react';
+import { motion } from 'motion/react';
+import { type FunctionComponent, useCallback, useState, useRef } from 'react';
 import { FaFacebookF, FaInstagram, FaXTwitter, FaYoutube } from 'react-icons/fa6';
 import { LuMenu } from 'react-icons/lu';
 import ContactForm from "./components/ContactForm";
@@ -39,10 +40,13 @@ const App: FunctionComponent = () => {
 	const [isContactFormOpen, setContactFormOpen] = useState(false);
 	const [isPrivacyPolicyOpen, setPrivacyPolicyOpen] = useState(false);
 	const [isTermsAndConditionsOpen, setTermsAndConditionsOpen] = useState(false);
+	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+	const aboutRef = useRef<HTMLDivElement>(null);
 	// const [toggler, setToggler] = useState(false);
 	// const [productIndex, setProductIndex] = useState<'set' | 'travel' | 'family'>('family');
 	const openContactForm = useCallback(() => {
 		setContactFormOpen(true);
+		setMobileMenuOpen(false)
 	}, []);
 
 	// const handleImageClick = (type: 'set' | 'travel' | 'family') => {
@@ -74,10 +78,8 @@ const App: FunctionComponent = () => {
 
 
 	const onAboutMeTextClick = useCallback(() => {
-		const anchor = document.querySelector("[data-scroll-to='frameContainer4']");
-		if (anchor) {
-			anchor.scrollIntoView({ "block": "start", "behavior": "smooth" })
-		}
+		aboutRef.current?.scrollIntoView({ block: "start", behavior: "smooth" });
+		setTimeout(() => setMobileMenuOpen(false), 50);
 	}, []);
 
 
@@ -86,6 +88,7 @@ const App: FunctionComponent = () => {
 		if (anchor) {
 			anchor.scrollIntoView({ "block": "start", "behavior": "smooth" })
 		}
+		setTimeout(() => setMobileMenuOpen(false), 50);
 	}, []);
 
 
@@ -94,6 +97,7 @@ const App: FunctionComponent = () => {
 		if (anchor) {
 			anchor.scrollIntoView({ "block": "start", "behavior": "smooth" })
 		}
+		setTimeout(() => setMobileMenuOpen(false), 50);
 	}, []);
 
 
@@ -102,6 +106,7 @@ const App: FunctionComponent = () => {
 		if (anchor) {
 			anchor.scrollIntoView({ "block": "start", "behavior": "smooth" })
 		}
+		setTimeout(() => setMobileMenuOpen(false), 50);
 	}, []);
 
 
@@ -114,38 +119,67 @@ const App: FunctionComponent = () => {
 
 	return (<>
 		<div className="w-full relative bg-whitesmoke text-left text-base text-darkslategray-100 overflow-x-hidden font-helvetica z-10">
-			<div className="bg-silver border-darkslategray-200 border-solid border-b box-border w-full flex flex-col items-center justify-start py-5 md:py-[30px]">
-				<div className="self-stretch relative flex justify-between px-6 md:px-20">
-					<div className="text-[17.53px] md:text-xl leading-6 md:leading-[27px] font-ahganirya cursor-pointer text-darkolivegreen" onClick={onBammyBestowedTextClick}>
+			<nav className="bg-silver fixed top-0 z-20 border-darkslategray-200 border-solid border-b box-border w-full flex flex-col items-center justify-start py-5 md:py-[30px]">
+				<div className="self-stretch relative flex justify-between px-6 md:px-20 items-center">
+					<button
+						className="text-[17.53px] md:text-xl leading-6 md:leading-[27px] font-ahganirya cursor-pointer text-darkolivegreen"
+						onClick={onBammyBestowedTextClick}
+					>
 						<p className="m-0">Bammy</p>
 						<p className="m-0 text-darkslategray-100 whitespace-pre-wrap">     Bestowed</p>
-					</div>
+					</button>
 					<div className="flex-row items-center justify-start gap-5 hidden md:flex">
-						<div className="relative leading-[22.4px] cursor-pointer" onClick={onAboutMeTextClick}>About Me</div>
-						<div className="flex flex-col items-start justify-start cursor-pointer" onClick={onLinkContainerClick}>
+						<button className="relative leading-[22.4px] cursor-pointer" onClick={onAboutMeTextClick}>About Me</button>
+						<button className="flex flex-col items-start justify-start cursor-pointer" onClick={onLinkContainerClick}>
 							<div className="relative leading-[22.4px]">Filmography</div>
-						</div>
-						<div className="flex flex-col items-start justify-start cursor-pointer" onClick={onLinkContainerClick1}>
+						</button>
+						<button className="flex flex-col items-start justify-start cursor-pointer" onClick={onLinkContainerClick1}>
 							<div className="relative leading-[22.4px]">Interviews</div>
-						</div>
-						<div className="flex flex-col items-start justify-start cursor-pointer" onClick={onLinkContainerClick2}>
+						</button>
+						<button className="flex flex-col items-start justify-start cursor-pointer" onClick={onLinkContainerClick2}>
 							<div className="relative leading-[22.4px]">{`News & Blog`}</div>
-						</div>
-						<div className="flex flex-col items-start justify-start">
+						</button>
+						<button onClick={openContactForm} className="flex flex-col items-start justify-start cursor-pointer">
 							<div className="relative leading-[22.4px]">Book Me</div>
-						</div>
+						</button>
 					</div>
 					<div className="flex-row items-center justify-start gap-4 text-darkolivegreen hidden md:flex">
-						<FaInstagram size={32} />
-						<FaFacebookF size={32} />
-						<FaXTwitter size={32} />
-						<FaYoutube size={32} />
+						<a href="https://www.instagram.com/bammybestowed?igsh=YzljYTk1ODg3Zg==" target="_blank" className=""><FaInstagram size={32} /></a>
+						<a href="https://www.facebook.com/bammybestowed" target="_blank" className=""><FaFacebookF size={32} /></a>
+						<a href="https://x.com/bambam" target="_blank" className=""><FaXTwitter size={32} /></a>
+						<a href="https://youtube.com/@bammybestowed?si=_cf5qTYXrTdbLHB5" target="_blank" className=""><FaYoutube size={32} /></a>
 					</div>
-					<LuMenu className="md:hidden" size={40} />
+					{/* Mobile menu */}
+					<div className="md:hidden flex items-center">
+						<LuMenu size={40} onClick={() => setMobileMenuOpen((v) => !v)} className="cursor-pointer" />
+					</div>
 				</div>
-			</div>
+				{/* Mobile Dropdown */}
+				{typeof window !== "undefined" && (
+					<motion.div
+						initial={{ height: 0, opacity: 0 }}
+						animate={mobileMenuOpen ? { height: "auto", opacity: 1 } : { height: 0, opacity: 0 }}
+						transition={{ duration: 0.3, ease: "easeInOut" }}
+						className="md:hidden overflow-hidden bg-silver px-6"
+					>
+						<div className="flex flex-col gap-4 py-4">
+							<button className="text-left leading-[22.4px] cursor-pointer" onClick={onAboutMeTextClick}>About Me</button>
+							<button className="text-left leading-[22.4px] cursor-pointer" onClick={onLinkContainerClick}>Filmography</button>
+							<button className="text-left leading-[22.4px] cursor-pointer" onClick={onLinkContainerClick1}>Interviews</button>
+							<button className="text-left leading-[22.4px] cursor-pointer" onClick={onLinkContainerClick2}>{`News & Blog`}</button>
+							<button className="text-left leading-[22.4px] cursor-pointer" onClick={openContactForm}>Book Me</button>
+							<div className="flex flex-row items-center justify-start gap-4 text-darkolivegreen pt-2">
+						<a href="https://www.instagram.com/bammybestowed?igsh=YzljYTk1ODg3Zg==" target="_blank" className=""><FaInstagram size={32} /></a>
+						<a href="https://www.facebook.com/bammybestowed" target="_blank" className=""><FaFacebookF size={32} /></a>
+						<a href="https://x.com/bambam" target="_blank" className=""><FaXTwitter size={32} /></a>
+						<a href="https://youtube.com/@bammybestowed?si=_cf5qTYXrTdbLHB5" target="_blank" className=""><FaYoutube size={32} /></a>
+							</div>
+						</div>
+					</motion.div>
+				)}
+			</nav>
 			{/* <div className="absolute top-[13159px] left-[80px] text-lg leading-[27px] text-white inline-block w-[360px]">{`All rates exclude VAT & WHT; international bookings attract separate tariffs.`}</div> */}
-			<div className="bg-silver w-full relative text-center text-[43.35px] md:text-[141.16px] text-black font-ahganirya">
+			<div className="bg-silver w-full mt-[89px] relative text-center text-[43.35px] md:text-[141.16px] text-black font-ahganirya">
 				<div className="relative w-full h-[395.05px] md:h-[919px] overflow-hidden" data-scroll-to="frameContainer">
 					<div className="absolute top-4 md:top-[166px] left-1/2 -translate-x-1/2 md:leading-[212.1px] leading-[80.16px] inline-block w-full h-[449px] mix-blend-overlay">
 						<p className="m-0">Bammy</p>
@@ -171,7 +205,7 @@ const App: FunctionComponent = () => {
 						<span className="leading-[19.6px] font-medium max-h-[19.6px]">Book Bambam</span>
 					</button>
 				</div>
-				<div className="md:w-[1281px] w-full flex flex-col items-end justify-start py-[100px] md:px-12 box-border gap-10 z-[1]" data-scroll-to="frameContainer4">
+				<div ref={aboutRef} className="md:w-[1281px] w-full flex flex-col items-end justify-start py-[100px] md:px-12 box-border gap-10 z-[1]" data-scroll-to="frameContainer4">
 					<div className="self-stretch flex flex-col items-start justify-start gap-12">
 						<i className="self-stretch relative">About Me</i>
 						<div className="self-stretch flex flex-col md:flex-row items-start justify-start gap-8 text-left md:text-[28px] text-2xl text-gray-200">
@@ -643,10 +677,10 @@ const App: FunctionComponent = () => {
 					</div>
 
 					<div className="flex flex-row items-center justify-start gap-4">
-						<FaInstagram size={32} />
-						<FaFacebookF size={32} />
-						<FaXTwitter size={32} />
-						<FaYoutube size={32} />
+						<a href="https://www.instagram.com/bammybestowed?igsh=YzljYTk1ODg3Zg==" target="_blank" className=""><FaInstagram size={32} /></a>
+						<a href="https://www.facebook.com/bammybestowed" target="_blank" className=""><FaFacebookF size={32} /></a>
+						<a href="https://x.com/bambam" target="_blank" className=""><FaXTwitter size={32} /></a>
+						<a href="https://youtube.com/@bammybestowed?si=_cf5qTYXrTdbLHB5" target="_blank" className=""><FaYoutube size={32} /></a>
 					</div>
 				</div>
 			</div>

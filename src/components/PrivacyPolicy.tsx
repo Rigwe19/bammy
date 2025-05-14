@@ -1,4 +1,5 @@
-import { type FunctionComponent } from 'react';
+import { useEffect, type FunctionComponent } from 'react';
+import { LuX } from 'react-icons/lu';
 
 
 export type PrivacyPolicyType = {
@@ -8,13 +9,21 @@ export type PrivacyPolicyType = {
 
 
 
-const PrivacyPolicy: FunctionComponent<PrivacyPolicyType> = ({ className = "" }) => {
+const PrivacyPolicy: FunctionComponent<PrivacyPolicyType> = ({ className = "", onClose }) => {
+    useEffect(() => {
+        document.body.style.overflow = 'hidden';
+
+        return (()=> {
+            document.body.style.overflow = "auto"
+        })
+    }, []);
     return (
-        <div className={`w-[1204px] relative bg-silver overflow-hidden flex flex-col items-center justify-center py-10 px-[60px] box-border max-w-full max-h-full text-center text-9xl text-gray-200 font-worcester-serial ${className}`}>
-            <div className="self-stretch flex flex-col items-start justify-center gap-6">
+        <div className={`w-full relative flex flex-col items-center justify-center box-border max-w-full max-h-full text-center text-9xl text-gray-200 font-worcester-serial ${className}`}>
+            <div className="md:w-1/2 w-full bg-silver overflow-auto py-10 md:px-[60px] px-2 space-y-6">
                 <div className="self-stretch flex flex-col items-center justify-start">
                     <i className="self-stretch relative font-bold">Privacy Policy</i>
                 </div>
+                <LuX className="absolute right-2 top-2" onClick={onClose} />
                 <div className="self-stretch flex flex-col items-center justify-start text-left text-base text-gray-500 font-helvetica">
                     <div className="self-stretch relative">
                         <p className="m-0">Effective Date: [Insert Date]</p>
