@@ -6,9 +6,10 @@ import ContactForm from "./components/ContactForm";
 import PortalPopup from "./components/PortalPopup";
 import PrivacyPolicy from "./components/PrivacyPolicy";
 import TermsAndConditions from "./components/TermsAndConditions";
-// import FsLightbox from "fslightbox-react";
-// import { Swiper, SwiperSlide } from 'swiper/react';
-// import 'swiper/css';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import LazyYouTube from './components/LazyYouTube';
 
 // const gallery = {
 // 	family: [
@@ -34,7 +35,13 @@ import TermsAndConditions from "./components/TermsAndConditions";
 // 		'/images/travel/6.webp',
 // 	]
 // }
-
+const settings = {
+	dots: true,
+	infinite: true,
+	speed: 500,
+	slidesToShow: 1,
+	slidesToScroll: 1
+};
 
 const App: FunctionComponent = () => {
 	const [isContactFormOpen, setContactFormOpen] = useState(false);
@@ -50,8 +57,8 @@ const App: FunctionComponent = () => {
 	}, []);
 
 	// const handleImageClick = (type: 'set' | 'travel' | 'family') => {
-		// setProductIndex(type)
-		// setToggler(true)
+	// setProductIndex(type)
+	// setToggler(true)
 	// }
 
 	const closeContactForm = useCallback(() => {
@@ -169,10 +176,10 @@ const App: FunctionComponent = () => {
 							<button className="text-left leading-[22.4px] cursor-pointer" onClick={onLinkContainerClick2}>{`News & Blog`}</button>
 							<button className="text-left leading-[22.4px] cursor-pointer" onClick={openContactForm}>Book Me</button>
 							<div className="flex flex-row items-center justify-start gap-4 text-darkolivegreen pt-2">
-						<a href="https://www.instagram.com/bammybestowed?igsh=YzljYTk1ODg3Zg==" target="_blank" className=""><FaInstagram size={32} /></a>
-						<a href="https://www.facebook.com/bammybestowed" target="_blank" className=""><FaFacebookF size={32} /></a>
-						<a href="https://x.com/bambam" target="_blank" className=""><FaXTwitter size={32} /></a>
-						<a href="https://youtube.com/@bammybestowed?si=_cf5qTYXrTdbLHB5" target="_blank" className=""><FaYoutube size={32} /></a>
+								<a href="https://www.instagram.com/bammybestowed?igsh=YzljYTk1ODg3Zg==" target="_blank" className=""><FaInstagram size={32} /></a>
+								<a href="https://www.facebook.com/bammybestowed" target="_blank" className=""><FaFacebookF size={32} /></a>
+								<a href="https://x.com/bambam" target="_blank" className=""><FaXTwitter size={32} /></a>
+								<a href="https://youtube.com/@bammybestowed?si=_cf5qTYXrTdbLHB5" target="_blank" className=""><FaYoutube size={32} /></a>
 							</div>
 						</div>
 					</motion.div>
@@ -192,7 +199,7 @@ const App: FunctionComponent = () => {
 				</div>
 			</div>
 			<div className="flex flex-col px-6 md:px-0 items-center justify-start text-center text-4xl md:text-29xl text-gray-100 font-worcester-serial">
-				<div className="w-full bg-seashell flex flex-col items-center justify-start py-[100px] px-0 box-border gap-10 md:text-[84px] text-[44px] text-gray-200">
+				<div className="w-full bg-seashell flex flex-col items-center justify-start py-[50px] px-0 box-border gap-10 md:text-[84px] text-[44px] text-gray-200">
 					<div className="self-stretch flex flex-col items-center justify-start">
 						<div className="self-stretch flex flex-col items-center justify-start gap-7">
 							<div className="self-stretch flex flex-col items-center justify-start">
@@ -205,14 +212,14 @@ const App: FunctionComponent = () => {
 						<span className="leading-[19.6px] font-medium max-h-[19.6px]">Book Bambam</span>
 					</button>
 				</div>
-				<div ref={aboutRef} className="md:w-[1281px] w-full flex flex-col items-end justify-start py-[100px] md:px-12 box-border gap-10 z-[1]" data-scroll-to="frameContainer4">
+				<div ref={aboutRef} className="md:w-[1281px] w-full flex flex-col items-end justify-start py-[50px] md:px-12 box-border gap-10 z-[1]" data-scroll-to="frameContainer4">
 					<div className="self-stretch flex flex-col items-start justify-start gap-12">
 						<i className="self-stretch relative">About Me</i>
 						<div className="self-stretch flex flex-col md:flex-row items-start justify-start gap-8 text-left md:text-[28px] text-2xl text-gray-200">
 							<div className="self-stretch w-full md:w-[545px] md:aspect-square rounded-lg bg-gray-600 overflow-hidden shrink-0 flex flex-row items-center justify-start p-2 box-border">
 								<img className="self-stretch flex-1 relative rounded-lg max-w-full overflow-hidden max-h-full object-cover" alt="" src="/images/about.webp" />
 							</div>
-							<div className="md:w-[692px] flex flex-col items-start justify-start gap-5">
+							<div className="flex flex-col items-start justify-start gap-5">
 								<i className="self-stretch relative font-worcester-serial italic">Bamike<span className="font-dm-sans">-</span>Olawumi Adenibuyan known as Bammy Bestowed is a multifaceted personality, renowned as an actress, lifestyle influencer, host, humanitarian, and a former housemate on Big Brother Naija Season 3.</i>
 								<div className="self-stretch relative text-base leading-[140%] font-helvetica text-gray-300">
 									<p className="m-0 mb-5 whitespace-pre-wrap">Bammy Bestowed  is a talented actor, and a good storyteller, she is a professional voice over artist and is good at directing.</p>
@@ -267,18 +274,19 @@ const App: FunctionComponent = () => {
 						</div>
 					</div>
 				</div>
-				<div className="w-full flex flex-col items-center justify-start py-[100px] md:px-12 box-border gap-12 z-[2]" data-scroll-to="frameContainer3">
+				<div className="w-full flex flex-col items-center justify-start py-[50px] md:px-12 box-border gap-12 z-[2]" data-scroll-to="frameContainer3">
 					<i className="self-stretch relative">Filmography</i>
 					<div className="md:w-full flex flex-col items-center justify-start text-left md:text-13xl text-[20px] text-darkslategray-100 font-helvetica">
 						<div className="md:w-full flex flex-col items-start justify-center gap-10">
-							<div className="self-stretch flex flex-col md:flex-row items-start justify-start gap-8">
+							<div className="self-stretch grid grid-cols-1 md:grid-cols-2 items-start justify-start gap-8">
 								{/* <div >
 									<img className="object-cover w-full h-full" alt="" src="/images/films/twin_deception.webp" />
 									<div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex rounded-full justify-center items-center bg-black/40 size-25.5">
 										<FaPlay size={48} className="text-white" />
 									</div>
 								</div> */}
-								<iframe className="flex-1 relative max-w-full overflow-hidden aspect-video rounded-8xs" src="https://www.youtube.com/embed/GwwLna5zxpk?si=ICzX2MGYUSbl7PeI" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+								<LazyYouTube videoId={'GwwLna5zxpk'} title={'Twin Deception'} />
+								{/* <iframe className="flex-1 relative max-w-full overflow-hidden aspect-video rounded-8xs" src="https://www.youtube.com/embed/GwwLna5zxpk?si=ICzX2MGYUSbl7PeI" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe> */}
 								<div className="flex-1 flex flex-col items-start justify-start">
 									<div className="self-stretch flex flex-col items-start justify-start gap-8">
 										<div className="self-stretch flex flex-col items-start justify-start gap-5">
@@ -292,14 +300,15 @@ const App: FunctionComponent = () => {
 									</div>
 								</div>
 							</div>
-							<div className="self-stretch flex flex-col md:flex-row items-start justify-start gap-8">
+							<div className="self-stretch grid grid-cols-1 md:grid-cols-2 items-start justify-start gap-8">
 								{/* <div className="flex-1 relative max-w-full overflow-hidden aspect-video rounded-8xs">
 									<img className="object-cover w-full h-full" alt="" src="/images/films/love_in_every_word.webp" />
 									<div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex rounded-full justify-center items-center bg-black/40 size-25.5">
 										<FaPlay size={48} className="text-white" />
 									</div>
 								</div> */}
-								<iframe className="flex-1 relative max-w-full overflow-hidden aspect-video rounded-8xs" src="https://www.youtube.com/embed/bslcx4LRFL0?si=4bAV6XV0bwgGJnBk" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+								<LazyYouTube videoId={'bslcx4LRFL0'} title={'Love in Every Word'} />
+								{/* <iframe className="flex-1 relative max-w-full overflow-hidden aspect-video rounded-8xs" src="https://www.youtube.com/embed/bslcx4LRFL0?si=4bAV6XV0bwgGJnBk" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe> */}
 								<div className="flex-1 flex flex-col items-start justify-start gap-3">
 									<div className="self-stretch flex flex-col items-start justify-start gap-5">
 										<div className="self-stretch flex flex-col items-start justify-between">
@@ -311,14 +320,15 @@ const App: FunctionComponent = () => {
 									<div className="relative text-5xl hidden md:block">2025</div>
 								</div>
 							</div>
-							<div className="self-stretch flex flex-col md:flex-row items-start justify-start gap-8">
+							<div className="self-stretch grid grid-cols-1 md:grid-cols-2 items-start justify-start gap-8">
 								{/* <div >
 									<img className="object-cover w-full h-full" alt="" src="/images/films/a_merry_side_of_you.webp" />
 									<div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex rounded-full justify-center items-center bg-black/40 size-25.5">
 										<FaPlay size={48} className="text-white" />
 									</div>
 								</div> */}
-								<iframe className="flex-1 relative max-w-full overflow-hidden aspect-video rounded-8xs" src="https://www.youtube.com/embed/Slxm189-MXk?si=cBlWYY2T5TEdZUIN" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+								<LazyYouTube videoId={'Slxm189-MXk'} title={'Merry Side of You'} />
+								{/* <iframe className="flex-1 relative max-w-full overflow-hidden aspect-video rounded-8xs" src="https://www.youtube.com/embed/Slxm189-MXk?si=cBlWYY2T5TEdZUIN" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe> */}
 								<div className="flex-1 flex flex-col items-start justify-start gap-3">
 									<div className="self-stretch flex flex-col items-start justify-start gap-5">
 										<div className="self-stretch flex flex-col items-start justify-between">
@@ -330,18 +340,19 @@ const App: FunctionComponent = () => {
 									<div className="relative text-5xl hidden md:block">2024</div>
 								</div>
 							</div>
-							<div className="self-stretch flex flex-col md:flex-row items-start justify-start gap-8">
+							<div className="self-stretch grid grid-cols-1 md:grid-cols-2 items-start justify-start gap-8">
 								{/* <div >
 									<img className="object-cover w-full h-full" alt="" src="/images/films/cupcake_for_val.webp" />
 									<div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex rounded-full justify-center items-center bg-black/40 size-25.5">
 										<FaPlay size={48} className="text-white" />
 									</div>
 								</div> */}
-								<iframe className="flex-1 relative max-w-full overflow-hidden aspect-video rounded-8xs" src="https://www.youtube.com/embed/KGkWFuk9xUE?si=_y9JoFmoGzjqbliV" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+								<LazyYouTube videoId={'KGkWFuk9xUE'} title={'Cupcake for Val'} />
+								{/* <iframe className="flex-1 relative max-w-full overflow-hidden aspect-video rounded-8xs" src="https://www.youtube.com/embed/KGkWFuk9xUE?si=_y9JoFmoGzjqbliV" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe> */}
 								<div className="flex-1 flex flex-col items-start justify-start gap-3">
 									<div className="self-stretch flex flex-col items-start justify-start gap-5">
 										<div className="self-stretch flex flex-col items-start justify-between">
-											<div className="relative">Cupcake for Val</div>
+											<div className="relative"></div>
 											<div className="relative block md:hidden">2025</div>
 										</div>
 										<div className="self-stretch relative text-base leading-[140%]">Separated at birth, ambitious lawyer Teni and struggling artist Tola swap lives to avenge a past betrayal. The ruse uncovers a billion‑naira conspiracy that could cost the sisters their freedom—and their newfound bond.</div>
@@ -355,7 +366,7 @@ const App: FunctionComponent = () => {
 						<span className="leading-[19.6px] font-medium max-h-[19.6px]">Show more</span>
 					</button>
 				</div>
-				<div className="md:w-full relative bg-seashell md:h-[731px] shrink-0 z-[3] -mx-6 px-6 py-4 md:py-0 text-gray-200" data-scroll-to="frameContainer2">
+				<div className="md:w-full relative bg-seashell shrink-0 z-[3] -mx-6 px-6 py-4 md:py-0 text-gray-200" data-scroll-to="frameContainer2">
 					<div className="w-full flex flex-col items-center justify-start gap-12">
 						<div className="self-stretch flex flex-col items-center justify-start">
 							<i className="self-stretch relative">Interview <span className="font-dm-sans">&</span> Media</i>
@@ -370,7 +381,7 @@ const App: FunctionComponent = () => {
 									</div>
 								</div>
 							</a>
-							<a  href="https://edition.cnn.com/2019/04/09/africa/fela-kalakuta-queens-south-africa-intl/index.html" target="_blank" className="flex flex-col items-start justify-start gap-5">
+							<a href="https://edition.cnn.com/2019/04/09/africa/fela-kalakuta-queens-south-africa-intl/index.html" target="_blank" className="flex flex-col items-start justify-start gap-5">
 								<img className="self-stretch relative rounded-8xs max-w-full overflow-hidden h-[281px] shrink-0 object-cover object-center" alt="" src="/images/interviews/cnn.png" />
 								<div className="self-stretch flex flex-col items-start justify-start">
 									<div className="md:w-[404px] flex flex-col items-start justify-start gap-3">
@@ -393,7 +404,7 @@ const App: FunctionComponent = () => {
 						</div>
 					</div>
 				</div>
-				<div className="w-full md:px-20 md:flex flex-col items-center justify-center py-[100px] px-0 box-border gap-12 z-[4]">
+				<div className="w-full md:px-20 md:flex flex-col items-center justify-center py-[50px] px-0 box-border gap-12 z-[4]">
 					<div className="self-stretch flex flex-col items-start justify-start">
 						<i className="self-stretch relative">Life</i>
 					</div>
@@ -403,7 +414,7 @@ const App: FunctionComponent = () => {
 								<div className="self-stretch relative tracking-[0.13em]">On‑Set Diaries</div>
 								{/* <img className="w-[1281px] relative max-h-full" alt="" src="/images/set/1.webp" /> */}
 							</div>
-							<div className="self-stretch flex flex-col items-center justify-start gap-[42px]">
+							<div className="self-stretch flex-col items-center justify-start gap-[42px] hidden md:flex">
 								<div className="self-stretch flex flex-col md:flex-row items-end justify-start gap-8">
 									<img className="md:w-1/3 relative rounded-8xs md:h-[633px] overflow-hidden shrink-0 object-cover" alt="" src="/images/set/1.webp" />
 									<img className="self-stretch md:w-2/3 relative rounded-8xs md:h-[633px] overflow-hidden shrink-0 object-cover" alt="" src="/images/set/2.jpg" />
@@ -415,45 +426,38 @@ const App: FunctionComponent = () => {
 
 								</div>
 							</div>
-							{/* <Swiper
-								// spaceBetween={50}
-								slidesPerView={1}
-								onSlideChange={() => console.log('slide change')}
-								onSwiper={(swiper) => console.log(swiper)}
+							<Slider {...settings}
+								className="w-full aspect-square rounded-lg md:!hidden"
 							>
-								<SwiperSlide>
-									<img className="object-cover" alt="" src="/images/set/1.webp" />
-								</SwiperSlide>
-								<SwiperSlide>
-									<img className="object-cover" alt="" src="/images/set/2.jpg" />
-								</SwiperSlide>
-								<SwiperSlide>
-									<img className="object-cover" alt="" src="/images/set/3.webp" />
-								</SwiperSlide>
-								<SwiperSlide>
-									<img className="object-cover" alt="" src="/images/set/4.webp" />
-								</SwiperSlide>
-								<SwiperSlide>
-									<img className="object-cover" alt="" src="/images/set/5.webp" />
-								</SwiperSlide>
-							</Swiper> */}
+								<img className="object-cover aspect-square rounded" alt="" src="/images/set/1.webp" />
+								<img className="object-cover aspect-square rounded" alt="" src="/images/set/2.jpg" />
+								<img className="object-cover aspect-square rounded" alt="" src="/images/set/3.webp" />
+								<img className="object-cover aspect-square rounded" alt="" src="/images/set/4.webp" />
+								<img className="object-cover aspect-square rounded" alt="" src="/images/set/5.webp" />
+							</Slider>
 						</div>
 						<div className="self-stretch flex flex-col items-start justify-start gap-5">
 							<div className="self-stretch flex flex-col items-start justify-start gap-4 border-b">
 								<div className="self-stretch relative tracking-[0.13em]">Family Moments</div>
 								{/* <img className="w-[1281px] relative max-h-full" alt="" src="Vector.svg" /> */}
 							</div>
-							<div className="self-stretch grid grid-cols-1 md:grid-cols-2 items-end justify-start gap-8">
+							<div className="self-stretch hidden md:grid grid-cols-1 md:grid-cols-2 items-end justify-start gap-8">
 								<img className="relative rounded-8xs h-[633px] object-cover w-full" alt="" src="/images/family/1.webp" />
 								<img className="relative rounded-8xs h-[633px] object-cover w-full" alt="" src="/images/family/2.webp" />
 							</div>
+							<Slider {...settings}
+								className="w-full aspect-square rounded-lg md:!hidden"
+							>
+								<img className="object-cover aspect-square rounded" alt="" src="/images/family/1.webp" />
+								<img className="object-cover aspect-square rounded" alt="" src="/images/family/2.webp" />
+							</Slider>
 						</div>
 						<div className="self-stretch flex flex-col items-center justify-start gap-5">
 							<div className="self-stretch flex flex-col items-start justify-start gap-4 border-b">
 								<div className="self-stretch relative tracking-[0.13em]">Travel Moment</div>
 								{/* <img className="w-[1281px] relative max-h-full" alt="" src="Vector.svg" /> */}
 							</div>
-							<div className="self-stretch flex flex-col items-start justify-start gap-8">
+							<div className="self-stretch hidden md:flex flex-col items-start justify-start gap-8">
 								<div className="self-stretch grid md:grid-cols-3 grid-cols-1 items-center justify-start gap-8">
 									<img className="relative rounded-8xs h-[418px] w-full overflow-hidden shrink-0 object-cover" alt="" src="/images/travel/1.webp" />
 									<img className="relative rounded-8xs h-[418px] w-full overflow-hidden shrink-0 object-cover" alt="" src="/images/travel/2.webp" />
@@ -465,41 +469,80 @@ const App: FunctionComponent = () => {
 									<img className="relative rounded-8xs h-[418px] w-full overflow-hidden shrink-0 object-cover" alt="" src="/images/travel/6.webp" />
 								</div>
 							</div>
+							<Slider {...settings}
+								className="w-full aspect-square rounded-lg md:!hidden"
+							>
+								<img className="object-cover aspect-square rounded" alt="" src="/images/travel/1.webp" />
+								<img className="object-cover aspect-square rounded" alt="" src="/images/travel/2.webp" />
+								<img className="object-cover aspect-square rounded" alt="" src="/images/travel/3.webp" />
+								<img className="object-cover aspect-square rounded" alt="" src="/images/travel/4.webp" />
+								<img className="object-cover aspect-square rounded" alt="" src="/images/travel/5.webp" />
+								<img className="object-cover aspect-square rounded" alt="" src="/images/travel/6.webp" />
+							</Slider>
 						</div>
 					</div>
 				</div>
-				<div className="w-full flex flex-col items-center justify-center py-[100px] px-0 box-border gap-12 z-[5] text-left" data-scroll-to="frameContainer1">
+
+				<div className="w-full flex flex-col items-center justify-center py-[50px] md:px-12 box-border gap-12 z-[5] text-left" data-scroll-to="frameContainer1">
 					<div className="self-stretch flex flex-col items-start justify-center">
 						<i className="self-stretch relative text-center">News <span className="font-dm-sans">&</span> Blog</i>
 					</div>
-					<div className="flex flex-col items-center justify-start gap-8 text-base font-helvetica">
-						<div className="flex flex-row items-start justify-start">
-							<div className="flex flex-col md:flex-row items-start justify-start gap-6">
-								<div className="md:w-[545px] w-full rounded-lg bg-gray-600 h-[492px] overflow-hidden shrink-0 flex flex-row items-center justify-start p-2 box-border">
-									<img className="self-stretch flex-1 relative rounded-lg max-w-full overflow-hidden max-h-full object-cover" alt="" src="/images/news/twin_deception.webp" />
-								</div>
-								<div className="md:w-[692px] flex flex-col items-start justify-start gap-5">
-									<div className="self-stretch relative leading-[140%]">News</div>
-									<i className="self-stretch relative text-9xl font-worcester-serial">Twin Deception hits 2 million views in six days</i>
+					<div className="grid grid-cols-1 md:grid-cols-2 items-center justify-start gap-8 text-base font-helvetica">
+						<div className="flex items-start md:h-[760px] justify-start md:border md:border-gray-200 p-6 rounded-[12px]">
+							<div className="flex flex-col items-start justify-start gap-6">
+								<img className="self-stretch relative rounded-[18px] w-full overflow-hidden h-[376px] object-cover" alt="" src="/images/news/amvca.webp" />
+								<div className="flex flex-col items-start justify-between h-full gap-5">
+									<div className="self-stretch relative leading-[140%] text-darkolivegreen">Pulse Nigeria News</div>
+									<i className="self-stretch relative text-2xl font-worcester-serial">‘What a Night It Was’: Bambam’s AMVCA Cultural‑Day Debut</i>
 									<div className="self-stretch relative leading-[140%]">
-										<p className="m-0">Bambam is a talented actor, and a good storyteller, she is a professional voice over artist and is good at directing.</p>
-										<p className="m-0">In collaboration with MTV Base Africa, Bamike collaborated with renowned stars like 2face Idibia and Tiwa Savage to drive awareness regarding civic responsibility, specifically emphasizing the importance of registering and securing Permanent Voter’s Cards ahead of elections in the country.</p>
-										<p className="m-0">Her impressive on-screen portfolio includes acclaimed projects like the social drama "Collision Course" and "Lockdown." She has also showcased her talent in various stage plays, including ''Love is the Musical”, “Fela And The Kalakuta Queens”, ”Queen Moremi The Musical”, and “Ada The Country.”</p>
-										<p className="m-0">Beyond her roles on-screen and on-stage, Bamike is a devoted wife and mother to two beautiful children. Her passion extends to addressing and advocating for women and children's rights, as well as actively speaking on issues related to mental health and postpartum depression.</p>
+										<p className="m-0">Big Brother Naija alum‑turned‑actress Bambam hosted the AMVCA 2025 Cultural Day for seasoning brand Onga, dazzling in an aso‑oke corset that landed her a Best Dressed nomination. In a backstage chat she credited the viral success of Love in Every Word for her renewed confidence and teased an upcoming Netflix docu‑series on African heritage costumes. (pulse.ng)</p>
+									</div>
+									<div className="self-stretch relative leading-[140%]">{`10 May 2025 `}</div>
+								</div>
+							</div>
+						</div>
+						<div className="flex items-start md:h-[760px] justify-start md:border md:border-gray-200 p-6 rounded-[12px]">
+							<div className="flex flex-col items-start justify-start gap-6">
+								<img className="self-stretch relative rounded-[18px] w-full overflow-hidden h-[376px] object-cover" alt="" src="/images/films/love_in_every_word.webp" />
+								<div className="flex flex-col items-start justify-between h-full gap-5">
+									<div className="self-stretch relative leading-[140%] text-darkolivegreen">BellaNaija News</div>
+									<i className="self-stretch relative text-2xl font-worcester-serial">“I Feel Honoured”: Bambam on the Meteoric Rise of Love in Every Word</i>
+									<div className="self-stretch relative leading-[140%]">
+										<p className="m-0">In BellaNaija’s flagship interview series, Bambam breaks down her journey from DM‑ing director Omoni Oboli to headlining the year’s biggest YouTube blockbuster. She reveals how a two‑year voice‑over stint with the BBC sharpened her dialogue delivery and why she prays on set before every take.</p>
+									</div>
+									<div className="self-stretch relative leading-[140%]">{`29 Mar 2025 `}</div>
+								</div>
+							</div>
+						</div>
+						<div className="flex items-start md:h-[760px] justify-start md:border md:border-gray-200 p-6 rounded-[12px]">
+							<div className="flex flex-col items-start justify-start gap-6">
+								<img className="self-stretch relative rounded-[18px] w-full overflow-hidden h-[376px] object-cover" alt="" src="/images/news/chemistry.webp" />
+								<div className="flex flex-col items-start justify-between h-full gap-5">
+									<div className="self-stretch relative leading-[140%] text-darkolivegreen">Pulse Nigeria News</div>
+									<i className="self-stretch relative text-2xl font-worcester-serial">“My Chemistry with Uzor Arukwe Was Real” — Bambam Reflects on Love in Every Word</i>
+									<div className="self-stretch relative leading-[140%]">
+										<p className="m-0">My Chemistry with Uzor Arukwe Was Real” — Bambam Reflects on Love in Every WordSpeaking to Punch, Bambam says the film’s beloved Achalugo‑Obiora pairing worked because she and co‑star Uzor Arukwe rehearsed scenes for weeks to master the silent beats between lines. She also confirms a sequel is in early scripting.</p>
 									</div>
 									<div className="self-stretch relative leading-[140%]">{`April 24 2025 `}</div>
 								</div>
 							</div>
 						</div>
-						<div className="flex flex-row items-center justify-start gap-1">
-							<div className="w-4 relative rounded-981xl bg-gray-400 h-4" />
-							<div className="w-4 relative rounded-981xl bg-gray-200 h-4" />
-							<div className="w-4 relative rounded-981xl bg-gray-400 h-4" />
-							<div className="w-4 relative rounded-981xl bg-gray-400 h-4" />
+						<div className="flex items-start md:h-[760px] justify-start md:border md:border-gray-200 p-6 rounded-[12px]">
+							<div className="flex flex-col items-start justify-start gap-6">
+								<img className="self-stretch relative rounded-[18px] w-full overflow-hidden h-[376px] object-cover" alt="" src="/images/films/twin_deception.webp" />
+								<div className="flex flex-col items-start justify-between h-full gap-5">
+									<div className="self-stretch relative leading-[140%] text-darkolivegreen">Blog</div>
+									<i className="self-stretch relative text-2xl font-worcester-serial">Twin Deception hits 2 million views in six days</i>
+									<div className="self-stretch relative leading-[140%]">
+										<p className="m-0">Omoni Oboli TV confirmed that Twin Deception crossed the 2-million-view mark today, making it Bambam’s fastest‑rising feature to date. The thriller shot in Lagos and Badagry reunites Bambam with director Mo’ Fakorede. Next up: a limited cinema run in Ghana before the film heads to Prime Video in July. Bambam thanked fans on Instagram Live, adding that part of the streaming revenue will fund three new maternal‑health outreaches through Bammy Bestowed Foundation. Cast and crew celebrations are slated for the AMVCA after‑party this weekend.</p>
+									</div>
+									<div className="self-stretch relative leading-[140%]">{`April 24 2025 `}</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
-				<div className="w-full relative bg-seashell md:h-[826px] md:py-25 md:px-19.5 text-[40px] text-gray-200">
+				<div className="w-full relative bg-seashell md:h-[826px] md:py-12.5 md:px-19.5 text-[40px] text-gray-200">
 					<div className="w-full flex flex-col items-center justify-start gap-12">
 						<div className="self-stretch flex flex-col items-center justify-start">
 							<div className="self-stretch flex flex-col items-start justify-start">
@@ -537,7 +580,7 @@ const App: FunctionComponent = () => {
 										<b className="self-stretch relative">MTV Base Africa</b>
 										<div className="self-stretch relative text-base text-gray-500">Civic‑engagement PSA with 2Face & Tiwa Savage (PVC drive)</div>
 									</div>
-									<div className="self-stretch relative">2025</div>
+									<div className="self-stretch relative text-xl">2025</div>
 								</div>
 							</div>
 							<div className="flex-1 flex flex-row items-start justify-start gap-[25px]">
@@ -547,7 +590,7 @@ const App: FunctionComponent = () => {
 										<b className="self-stretch relative">Dettol Nigeria</b>
 										<div className="self-stretch relative text-base text-gray-500">“Clean Hands, Bright Futures” hygiene campaign (TV + digital)</div>
 									</div>
-									<div className="self-stretch relative">2024</div>
+									<div className="self-stretch relative text-xl">2024</div>
 								</div>
 							</div>
 							<div className="flex-1 flex flex-row items-start justify-start gap-[25px]">
@@ -580,7 +623,7 @@ const App: FunctionComponent = () => {
 										<b className="self-stretch relative">Indomie</b>
 										<div className="self-stretch relative text-base text-gray-500">“My Quick Comfort” digital skit campaign</div>
 									</div>
-									<div className="self-stretch relative">2021</div>
+									<div className="self-stretch relative text-xl">2021</div>
 								</div>
 							</div>
 							<div className="flex-1 flex flex-row items-start justify-start gap-[25px]">
@@ -590,7 +633,7 @@ const App: FunctionComponent = () => {
 										<b className="self-stretch relative">Tecno Mobile</b>
 										<div className="self-stretch relative text-base text-gray-500">Camon launch event co‑host & short‑film</div>
 									</div>
-									<div className="self-stretch relative">2020</div>
+									<div className="self-stretch relative text-xl">2020</div>
 								</div>
 							</div>
 						</div>
@@ -615,13 +658,13 @@ const App: FunctionComponent = () => {
 						{/* <div className="h-[calc(100%_-_645px)] top-[131px] bottom-[514px] left-[835px] w-[270px] hidden max-w-[300px]" /> */}
 					</div>
 				</div>
-				<div className="w-full relative bg-seashell md:h-[826px] overflow-hidden mt-10 md:mt-0 shrink-0 z-[8] text-left">
+				<div className="w-full relative bg-seashell md:px-12 md:py-16 overflow-hidden mt-10 md:mt-0 shrink-0 z-[8] text-left">
 					<div className="absolute top-[117px] left-[809px] [filter:blur(1000px)] rounded-981xl w-[602px] h-[839px]" />
 					<div className="absolute h-[calc(100%_-_645px)] top-[307px] bottom-[338px] left-[835px] w-[270px] hidden max-w-[300px]" />
 					<div className="absolute top-[134.8px] left-[797px] w-[581px] h-[330.6px]" />
 					<div className="flex flex-col md:flex-row items-center justify-start gap-11">
-						<div className="w-full md:w-[692px] rounded-[22.86px] bg-gray-600 h-[624.7px] overflow-hidden shrink-0 flex flex-row items-center justify-start p-[10.2px] box-border">
-							<img className="self-stretch w-[671.7px] relative rounded-[10.16px] max-h-full overflow-hidden shrink-0 object-cover" alt="" src="/images/subscribe.webp" />
+						<div className="rounded-[22.86px] w-full md:w-auto bg-gray-600 h-[624.7px] overflow-hidden shrink-0 flex flex-row items-center justify-start p-[10.2px] box-border">
+							<img className="self-stretch w-full md:w-[671.7px] relative rounded-[10.16px] max-h-full overflow-hidden shrink-0 object-cover" alt="" src="/images/subscribe.webp" />
 						</div>
 						<div className="w-full md:w-[544px] flex flex-col items-start justify-start gap-10">
 							<div className="self-stretch flex flex-col items-start justify-start">

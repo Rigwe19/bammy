@@ -18,8 +18,8 @@ const PrivacyPolicy: FunctionComponent<PrivacyPolicyType> = ({ className = "", o
         })
     }, []);
     return (
-        <div className={`w-full relative flex flex-col items-center justify-center box-border max-w-full max-h-full text-center text-9xl text-gray-200 font-worcester-serial ${className}`}>
-            <div className="md:w-1/2 w-full bg-silver overflow-auto py-10 md:px-[60px] px-2 space-y-6">
+        <div className={`w-full overflow-hidden flex items-center justify-center box-border max-w-full max-h-full text-center text-9xl text-gray-200 font-worcester-serial ${className}`}>
+            <div className="md:w-1/2 relative self-stretch bg-silver space-y-6 py-10 md:px-[60px] px-2 overflow-auto">
                 <div className="self-stretch flex flex-col items-center justify-start">
                     <i className="self-stretch relative font-bold">Privacy Policy</i>
                 </div>
