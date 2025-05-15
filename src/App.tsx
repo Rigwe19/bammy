@@ -127,7 +127,7 @@ const App: FunctionComponent = () => {
 	return (<>
 		<div className="w-full relative bg-whitesmoke text-left text-base text-darkslategray-100 overflow-x-hidden font-helvetica z-10">
 			<nav className="bg-silver fixed top-0 z-20 border-darkslategray-200 border-solid border-b box-border w-full flex flex-col items-center justify-start py-5 md:py-[30px]">
-				<div className="self-stretch relative flex justify-between px-6 md:px-20 items-center">
+				<div className="self-stretch relative flex justify-between px-6 items-center">
 					<button
 						className="text-[17.53px] md:text-xl leading-6 md:leading-[27px] font-ahganirya cursor-pointer text-darkolivegreen"
 						onClick={onBammyBestowedTextClick}
@@ -404,7 +404,7 @@ const App: FunctionComponent = () => {
 						</div>
 					</div>
 				</div>
-				<div className="w-full md:px-20 md:flex flex-col items-center justify-center py-[50px] px-0 box-border gap-12 z-[4]">
+				<div className="w-full md:px-12 md:flex flex-col items-center justify-center py-[50px] px-0 box-border gap-12 z-[4]">
 					<div className="self-stretch flex flex-col items-start justify-start">
 						<i className="self-stretch relative">Life</i>
 					</div>
@@ -415,14 +415,14 @@ const App: FunctionComponent = () => {
 								{/* <img className="w-[1281px] relative max-h-full" alt="" src="/images/set/1.webp" /> */}
 							</div>
 							<div className="self-stretch flex-col items-center justify-start gap-[42px] hidden md:flex">
-								<div className="self-stretch flex flex-col md:flex-row items-end justify-start gap-8">
-									<img className="md:w-1/3 relative rounded-8xs md:h-[633px] overflow-hidden shrink-0 object-cover" alt="" src="/images/set/1.webp" />
-									<img className="self-stretch md:w-2/3 relative rounded-8xs md:h-[633px] overflow-hidden shrink-0 object-cover" alt="" src="/images/set/2.jpg" />
+								<div className="self-stretch grid grid-cols-3 gap-8">
+									<img className="w-full relative rounded-8xs md:h-[633px] overflow-hidden shrink-0 object-cover" alt="" src="/images/set/1.webp" />
+									<img className="self-stretch col-span-2 w-full relative rounded-8xs md:h-[633px] overflow-hidden shrink-0 object-cover" alt="" src="/images/set/2.jpg" />
 								</div>
-								<div className="self-stretch flex flex-col md:flex-row items-center justify-start gap-8">
-									<img className="md:w-1/3 relative rounded-8xs md:h-[418px] overflow-hidden shrink-0 object-cover" alt="" src="/images/set/3.webp" />
-									<img className="md:w-1/3 relative rounded-8xs md:h-[418px] overflow-hidden shrink-0 object-cover" alt="" src="/images/set/4.webp" />
-									<img className="md:w-1/3 relative rounded-8xs md:h-[418px] overflow-hidden shrink-0 object-cover" alt="" src="/images/set/5.webp" />
+								<div className="self-stretch grid grid-cols-3 gap-8">
+									<img className="md:w-full relative rounded-8xs md:h-[418px] overflow-hidden shrink-0 object-cover" alt="" src="/images/set/3.webp" />
+									<img className="md:w-full relative rounded-8xs md:h-[418px] overflow-hidden shrink-0 object-cover" alt="" src="/images/set/4.webp" />
+									<img className="md:w-full relative rounded-8xs md:h-[418px] overflow-hidden shrink-0 object-cover" alt="" src="/images/set/5.webp" />
 
 								</div>
 							</div>
