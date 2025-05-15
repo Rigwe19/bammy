@@ -22,10 +22,10 @@
 
 @font-face {
   font-family: "Worcester Serial";
-  src: local("Worcester Serial Heavy Regular"),
-    local("WorcesterSerialHeavyRegular"),
-    url("WorcesterSerialHeavyRegular.woff2") format("woff2"),
-    url("WorcesterSerialHeavyRegular.woff") format("woff");
+  src: local("/fonts/Worcester Serial Heavy Regular"),
+    local("/fonts/WorcesterSerialHeavyRegular"),
+    url("/fonts/WorcesterSerialHeavyRegular.woff2") format("woff2"),
+    url("/fonts/WorcesterSerialHeavyRegular.woff") format("woff");
   font-weight: 900;
   font-style: normal;
   font-display: swap;
@@ -33,10 +33,10 @@
 
 @font-face {
   font-family: "Worcester Serial";
-  src: local("Worcester Serial Heavy Italic"),
-    local("WorcesterSerialHeavyItalic"),
-    url("WorcesterSerialHeavyItalic.woff2") format("woff2"),
-    url("WorcesterSerialHeavyItalic.woff") format("woff");
+  src: local("/fonts/Worcester Serial Heavy Italic"),
+    local("/fonts/WorcesterSerialHeavyItalic"),
+    url("/fonts/WorcesterSerialHeavyItalic.woff2") format("woff2"),
+    url("/fonts/WorcesterSerialHeavyItalic.woff") format("woff");
   font-weight: 900;
   font-style: italic;
   font-display: swap;
@@ -44,10 +44,10 @@
 
 @font-face {
   font-family: "Worcester Serial";
-  src: local("Worcester Serial Medium Italic"),
-    local("WorcesterSerialMediumItalic"),
-    url("WorcesterSerialMediumItalic.woff2") format("woff2"),
-    url("WorcesterSerialMediumItalic.woff") format("woff");
+  src: local("/fonts/Worcester Serial Medium Italic"),
+    local("/fonts/WorcesterSerialMediumItalic"),
+    url("/fonts/WorcesterSerialMediumItalic.woff2") format("woff2"),
+    url("/fonts/WorcesterSerialMediumItalic.woff") format("woff");
   font-weight: 500;
   font-style: italic;
   font-display: swap;
@@ -55,10 +55,10 @@
 
 @font-face {
   font-family: "Worcester Serial";
-  src: local("Worcester Serial Italic"),
-    local("WorcesterSerialItalic"),
-    url("WorcesterSerialItalic.woff2") format("woff2"),
-    url("WorcesterSerialItalic.woff") format("woff");
+  src: local("/fonts/Worcester Serial Italic"),
+    local("/fonts/WorcesterSerialItalic"),
+    url("/fonts/WorcesterSerialItalic.woff2") format("woff2"),
+    url("/fonts/WorcesterSerialItalic.woff") format("woff");
   font-weight: normal;
   font-style: italic;
   font-display: swap;
@@ -66,10 +66,10 @@
 
 @font-face {
   font-family: "Worcester Serial";
-  src: local("Worcester Serial Medium Regular"),
-    local("WorcesterSerialMediumRegular"),
-    url("WorcesterSerialMediumRegular.woff2") format("woff2"),
-    url("WorcesterSerialMediumRegular.woff") format("woff");
+  src: local("/fonts/Worcester Serial Medium Regular"),
+    local("/fonts/WorcesterSerialMediumRegular"),
+    url("/fonts/WorcesterSerialMediumRegular.woff2") format("woff2"),
+    url("/fonts/WorcesterSerialMediumRegular.woff") format("woff");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -77,10 +77,10 @@
 
 @font-face {
   font-family: "Worcester Serial";
-  src: local("Worcester Serial Regular"),
-    local("WorcesterSerialRegular"),
-    url("WorcesterSerialRegular.woff2") format("woff2"),
-    url("WorcesterSerialRegular.woff") format("woff");
+  src: local("/fonts/Worcester Serial Regular"),
+    local("/fonts/WorcesterSerialRegular"),
+    url("/fonts/WorcesterSerialRegular.woff2") format("woff2"),
+    url("/fonts/WorcesterSerialRegular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -88,10 +88,10 @@
 
 /* @font-face {
   font-family: "Worcester Serial Xbold";
-  src: local("Worcester Serial Xbold Regular"),
-    local("WorcesterSerialXboldRegular"),
-    url("WorcesterSerialXboldRegular.woff2") format("woff2"),
-    url("WorcesterSerialXboldRegular.woff") format("woff");
+  src: local("/fonts/Worcester Serial Xbold Regular"),
+    local("/fonts/WorcesterSerialXboldRegular"),
+    url("/fonts/WorcesterSerialXboldRegular.woff2") format("woff2"),
+    url("/fonts/WorcesterSerialXboldRegular.woff") format("woff");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -99,10 +99,10 @@
 
 @font-face {
   font-family: "Worcester Serial Xbold";
-  src: local("Worcester Serial Xbold Italic"),
-    local("WorcesterSerialXboldItalic"),
-    url("WorcesterSerialXboldItalic.woff2") format("woff2"),
-    url("WorcesterSerialXboldItalic.woff") format("woff");
+  src: local("/fonts/Worcester Serial Xbold Italic"),
+    local("/fonts/WorcesterSerialXboldItalic"),
+    url("/fonts/WorcesterSerialXboldItalic.woff2") format("woff2"),
+    url("/fonts/WorcesterSerialXboldItalic.woff") format("woff");
   font-weight: bold;
   font-style: italic;
   font-display: swap;
