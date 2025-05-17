@@ -220,7 +220,7 @@ const App: FunctionComponent = () => {
 								<img className="self-stretch flex-1 relative rounded-lg max-w-full overflow-hidden max-h-full object-cover" alt="" src="/images/about.webp" />
 							</div>
 							<div className="flex flex-col items-start justify-start gap-5">
-								<i className="self-stretch relative font-worcester-serial italic">Bamike<span className="font-dm-sans">-</span>Olawumi Adenibuyan known as Bammy Bestowed is a multifaceted personality, renowned as an actress, lifestyle influencer, host, humanitarian, and a former housemate on Big Brother Naija Season 3.</i>
+								<i className="self-stretch relative font-worcester-serial italic">Bamike<span className="font-dm-sans">-</span>Olawumi Adenibuyan known as Bammy Bestowed is a multifaceted personality, renowned as an actress, lifestyle influencer, host, humanitarian.</i>
 								<div className="self-stretch relative text-base leading-[140%] font-helvetica text-gray-300">
 									<p className="m-0 mb-5 whitespace-pre-wrap">Bammy Bestowed  is a talented actor, and a good storyteller, she is a professional voice over artist and is good at directing.</p>
 									<p className="m-0 mb-5">In collaboration with MTV Base Africa, Bamike collaborated with renowned stars like 2face Idibia and Tiwa Savage to drive awareness regarding civic responsibility, specifically emphasizing the importance of registering and securing Permanent Voter’s Cards ahead of elections in the country.</p>
