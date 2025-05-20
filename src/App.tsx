@@ -703,7 +703,7 @@ const App: FunctionComponent = () => {
 				</div>
 				{/* <div className="w-[calc(100%_-_753px)] absolute !!m-[0 important] top-[997.78px] right-[604px] left-[149px] h-[31px] z-[9]" /> */}
 			</div>
-			<footer className="border-[#38323280] relative md:border-t box-border w-full md:h-[164px] px-6">
+			<footer className="border-[#38323280] relative md:border-t box-border w-full md:h-[164px] pr-6 pl-12">
 				<div className="h-full w-full flex flex-col mt-10 md:mt-0 gap-10 md:gap-0 md:flex-row justify-between items-center text-darkolivegreen">
 					{/* <div className="h-full bg-seashell border-darkslategray-200 border-solid border-[1px] box-border w-full" /> */}
 					<div className="text-[31.55px] leading-[42.59px] font-ahganirya text-darkolivegreen">
