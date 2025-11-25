@@ -117,6 +117,15 @@ const App: FunctionComponent = () => {
 	}, []);
 
 
+	const onLinkContainerClick3 = useCallback(() => {
+		const anchor = document.querySelector("[data-scroll-to='brands']");
+		if (anchor) {
+			anchor.scrollIntoView({ "block": "start", "behavior": "smooth" })
+		}
+		setTimeout(() => setMobileMenuOpen(false), 50);
+	}, []);
+
+
 	const onBammyBestowedTextClick = useCallback(() => {
 		const anchor = document.querySelector("[data-scroll-to='frameContainer']");
 		if (anchor) {
@@ -126,16 +135,17 @@ const App: FunctionComponent = () => {
 
 	return (<>
 		<div className="w-full relative bg-whitesmoke text-left text-base text-darkslategray-100 overflow-x-hidden font-helvetica z-10">
-			<nav className="bg-silver fixed top-0 z-20 border-darkslategray-200 border-solid border-b box-border w-full flex flex-col items-center justify-start py-5 md:py-[30px]">
+			<nav className="bg-silver fixed top-0 z-20 border-darkslategray-200 border-solid border-b box-border w-full flex flex-col items-center justify-start py-5">
 				<div className="self-stretch relative flex justify-between px-6 items-center">
 					<button
 						className="text-[17.53px] md:text-xl leading-6 md:leading-[27px] font-ahganirya cursor-pointer text-darkolivegreen"
 						onClick={onBammyBestowedTextClick}
 					>
-						<p className="m-0">Bammy</p>
-						<p className="m-0 text-darkslategray-100 whitespace-pre-wrap">     Bestowed</p>
+						<img src='/logo.png' className='h-12 w-auto' />
+						{/* <p className="m-0">Bammy</p>
+						<p className="m-0 text-darkslategray-100 whitespace-pre-wrap">     Bestowed</p> */}
 					</button>
-					<div className="flex-row items-center justify-start gap-5 hidden md:flex">
+					<div className="flex-row items-center text-white justify-start gap-5 hidden md:flex">
 						<button className="relative leading-[22.4px] cursor-pointer" onClick={onAboutMeTextClick}>About Me</button>
 						<button className="flex flex-col items-start justify-start cursor-pointer" onClick={onLinkContainerClick}>
 							<div className="relative leading-[22.4px]">Filmography</div>
@@ -146,11 +156,14 @@ const App: FunctionComponent = () => {
 						<button className="flex flex-col items-start justify-start cursor-pointer" onClick={onLinkContainerClick2}>
 							<div className="relative leading-[22.4px]">{`News & Blog`}</div>
 						</button>
+						<button className="flex flex-col items-start justify-start cursor-pointer" onClick={onLinkContainerClick3}>
+							<div className="relative leading-[22.4px]">{`Brands`}</div>
+						</button>
 						<button onClick={openContactForm} className="flex flex-col items-start justify-start cursor-pointer">
 							<div className="relative leading-[22.4px]">Book Me</div>
 						</button>
 					</div>
-					<div className="flex-row items-center justify-start gap-4 text-darkolivegreen hidden md:flex">
+					<div className="flex-row items-center justify-start gap-4 text-white hidden md:flex">
 						<a href="https://www.instagram.com/bammybestowed?igsh=YzljYTk1ODg3Zg==" target="_blank" className=""><FaInstagram size={32} /></a>
 						<a href="https://www.facebook.com/bammybestowed" target="_blank" className=""><FaFacebookF size={32} /></a>
 						<a href="https://x.com/bambam" target="_blank" className=""><FaXTwitter size={32} /></a>
@@ -193,7 +206,7 @@ const App: FunctionComponent = () => {
 						<p className="m-0">Bestowed</p>
 					</div>
 					<div className="flex absolute w-full inset-0 justify-center px-4 items-end">
-						<img className="object-contain -mb-10 md:-mb-10 w-full md:w-[932px] h-auto md:h-[857px] ml-2" alt="" src="/images/hero.webp" />
+						<img className="object-contain -mb-10 md:-mb-0 w-full md:w-[932px] h-auto md:h-[857px] ml-2" alt="" src="/images/hero.png" />
 					</div>
 
 				</div>
@@ -208,7 +221,7 @@ const App: FunctionComponent = () => {
 							<div className="relative text-lg leading-[27px] font-medium font-montserrat">{`Nollywood & Stage Actress | Storyteller | Voice that stays with you.`}</div>
 						</div>
 					</div>
-					<button className="flex flex-row bg-darkolivegreen items-start rounded-3xs py-4 px-8 md:w-auto w-full flex justify-center cursor-pointer text-lg text-white font-dm-sans" onClick={openContactForm}>
+					<button className="flex flex-row bg-darkolivegreen items-start rounded-3xs py-4 px-8 md:w-auto w-full justify-center cursor-pointer text-lg text-white font-dm-sans" onClick={openContactForm}>
 						<span className="leading-[19.6px] font-medium max-h-[19.6px]">Book Bambam</span>
 					</button>
 				</div>
@@ -362,11 +375,11 @@ const App: FunctionComponent = () => {
 							</div>
 						</div>
 					</div>
-					<button className="flex flex-row bg-darkolivegreen items-start rounded-3xs py-4 px-8 md:w-auto w-full flex justify-center cursor-pointer text-lg text-white font-dm-sans" onClick={openContactForm}>
+					<button className="flex flex-row bg-darkolivegreen items-start rounded-3xs py-4 px-8 md:w-auto w-full justify-center cursor-pointer text-lg text-white font-dm-sans" onClick={openContactForm}>
 						<span className="leading-[19.6px] font-medium max-h-[19.6px]">Show more</span>
 					</button>
 				</div>
-				<div className="md:w-full relative bg-seashell shrink-0 z-[3] -mx-6 px-6 py-4 md:py-0 text-gray-200" data-scroll-to="frameContainer2">
+				<div className="md:w-full relative bg-seashell shrink-0 z-3 -mx-6 px-6 py-4 md:py-0 text-gray-200" data-scroll-to="frameContainer2">
 					<div className="w-full flex flex-col items-center justify-start gap-12">
 						<div className="self-stretch flex flex-col items-center justify-start">
 							<i className="self-stretch relative">Interview <span className="font-dm-sans">&</span> Media</i>
@@ -404,7 +417,7 @@ const App: FunctionComponent = () => {
 						</div>
 					</div>
 				</div>
-				<div className="w-full md:px-12 md:flex flex-col items-center justify-center py-[50px] px-0 box-border gap-12 z-[4]">
+				<div className="w-full md:px-12 md:flex flex-col items-center justify-center py-[50px] px-0 box-border gap-12 z-4">
 					<div className="self-stretch flex flex-col items-start justify-start">
 						<i className="self-stretch relative">Life</i>
 					</div>
@@ -427,7 +440,7 @@ const App: FunctionComponent = () => {
 								</div>
 							</div>
 							<Slider {...settings}
-								className="w-full aspect-square rounded-lg md:!hidden"
+								className="w-full aspect-square rounded-lg md:hidden!"
 							>
 								<img className="object-cover aspect-square rounded" alt="" src="/images/set/1.webp" />
 								<img className="object-cover aspect-square rounded" alt="" src="/images/set/2.jpg" />
@@ -542,7 +555,7 @@ const App: FunctionComponent = () => {
 						</div>
 					</div>
 				</div>
-				<div className="w-full relative bg-seashell md:h-[826px] md:py-12.5 md:px-19.5 text-[40px] text-gray-200">
+				<div className="w-full relative bg-seashell md:h-[826px] md:py-12.5 md:px-19.5 text-[40px] text-gray-200" data-scroll-to="brands">
 					<div className="w-full flex flex-col items-center justify-start gap-12">
 						<div className="self-stretch flex flex-col items-center justify-start">
 							<div className="self-stretch flex flex-col items-start justify-start">
@@ -639,7 +652,7 @@ const App: FunctionComponent = () => {
 						</div>
 					</div>
 				</div>
-				<div className="md:w-full flex flex-col -mx-6 px-6 pt-15 md:pt-0 md:flex-row relative bg-silver md:h-[650px] justify-between shrink-0 z-[7] text-left md:text-[74px]">
+				<div className="md:w-full flex flex-col -mx-6 px-6 pt-15 md:pt-0 md:flex-row relative bg-silver md:h-[650px] text-white justify-between shrink-0 z-[7] text-left md:text-[74px]">
 					<div className="flex flex-col items-center justify-start self-center w-full">
 						<div className="self-stretch flex flex-col items-start justify-start gap-10 md:pl-8">
 							<div className="self-stretch flex flex-col items-start justify-start gap-7">
@@ -654,7 +667,7 @@ const App: FunctionComponent = () => {
 					</div>
 					<div className="md:w-2/3 relative aspect-square flex md:justify-end">
 						<div className="inset-0 absolute blur-[1000px] rounded-981xl w-[602px] h-[839px]" />
-						<img className="md:h-full w-full md:aspect-video object-cont" alt="" src="/images/book.png" />
+						<img className="md:h-full w-full md:aspect-video object-cover" alt="" src="/images/book.webp" />
 						{/* <div className="h-[calc(100%_-_645px)] top-[131px] bottom-[514px] left-[835px] w-[270px] hidden max-w-[300px]" /> */}
 					</div>
 				</div>
@@ -703,13 +716,14 @@ const App: FunctionComponent = () => {
 				</div>
 				{/* <div className="w-[calc(100%_-_753px)] absolute !!m-[0 important] top-[997.78px] right-[604px] left-[149px] h-[31px] z-[9]" /> */}
 			</div>
-			<footer className="border-[#38323280] relative md:border-t box-border w-full md:h-[164px] pr-6 pl-12">
-				<div className="h-full w-full flex flex-col mt-10 md:mt-0 gap-10 md:gap-0 md:flex-row justify-between items-center text-darkolivegreen">
+			<footer className="border-[#38323280] relative md:border-t box-border w-full md:h-[164px] pr-6 pl-12 bg-darkolivegreen">
+				<div className="h-full w-full flex flex-col mt-10 md:mt-0 gap-10 md:gap-0 md:flex-row justify-between items-center text-white">
 					{/* <div className="h-full bg-seashell border-darkslategray-200 border-solid border-[1px] box-border w-full" /> */}
-					<div className="text-[31.55px] leading-[42.59px] font-ahganirya text-darkolivegreen">
+					{/* <div className="text-[31.55px] leading-[42.59px] font-ahganirya text-darkolivegreen">
 						<p className="m-0">Bammy</p>
 						<p className="m-0 text-darkslategray-100 whitespace-pre-wrap">     Bestowed</p>
-					</div>
+					</div> */}
+					<img src="/logo.png" alt="" className='h-12 w-auto' />
 					<div className="flex flex-col md:flex-row gap-6.25 md:gap-4 items-center">
 						<div className="leading-[22.4px] whitespace-pre-wrap">© 2025. Bam Ent. All Rights Reserved.</div>
 						<div className="flex flex-row items-center justify-start gap-5">
