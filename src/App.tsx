@@ -200,13 +200,13 @@ const App: FunctionComponent = () => {
 			</nav>
 			{/* <div className="absolute top-[13159px] left-[80px] text-lg leading-[27px] text-white inline-block w-[360px]">{`All rates exclude VAT & WHT; international bookings attract separate tariffs.`}</div> */}
 			<div className="bg-silver w-full mt-[89px] relative text-center text-[43.35px] md:text-[141.16px] text-black font-ahganirya">
-				<div className="relative w-full h-[395.05px] md:h-[919px] overflow-hidden" data-scroll-to="frameContainer">
+				<div className="relative w-full h-[395.05px] md:h-[750px] overflow-hidden" data-scroll-to="frameContainer">
 					<div className="absolute top-4 md:top-[166px] left-1/2 -translate-x-1/2 md:leading-[212.1px] leading-[80.16px] inline-block w-full h-[449px] mix-blend-overlay">
 						<p className="m-0">Bammy</p>
 						<p className="m-0">Bestowed</p>
 					</div>
 					<div className="flex absolute w-full inset-0 justify-center px-4 items-end">
-						<img className="object-contain -mb-10 md:-mb-0 w-full md:w-[932px] h-auto md:h-[857px] ml-2" alt="" src="/images/hero.png" />
+						<img className="object-contain -mb-10 md:mb-0 w-full md:w-[932px] h-auto md:h-[857px] ml-2" alt="" src="/images/hero.png" />
 					</div>
 
 				</div>
@@ -660,7 +660,7 @@ const App: FunctionComponent = () => {
 								<div className="md:w-[360px] relative text-lg leading-[27px] font-helvetica text-white inline-block self-start text-center md:text-left">From feature films to keynote talks, let’s create something unforgettable.”
 								</div>
 							</div>
-							<button className="flex flex-row bg-darkolivegreen items-start rounded-3xs py-4 px-8 md:w-auto w-full flex justify-center cursor-pointer text-lg text-white font-dm-sans" onClick={openContactForm}>
+							<button className="flex flex-row bg-white items-start rounded-3xs py-4 px-8 md:w-auto w-full flex justify-center cursor-pointer text-lg text-darkolivegreen font-dm-sans" onClick={openContactForm}>
 								<span className="leading-[19.6px] font-medium max-h-[19.6px]">Book Now</span>
 							</button>
 						</div>
