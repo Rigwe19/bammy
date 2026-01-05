@@ -2,13 +2,13 @@ import { type FunctionComponent, useCallback, useRef, useState } from 'react';
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 import ContactForm from "./components/ContactForm";
+import { MovieList } from './components/MovieList';
 import PortalPopup from "./components/PortalPopup";
 import PrivacyPolicy from "./components/PrivacyPolicy";
 import TermsAndConditions from "./components/TermsAndConditions";
 import About from './sections/About';
 import Booking from './sections/Booking';
-import Brands from './sections/Brands';
-import Filmography from './sections/Filmography';
+import BrandSection from './sections/BrandSection';
 import Footer from './sections/Footer';
 import Header from './sections/Header';
 import Hero from './sections/Hero';
@@ -138,11 +138,12 @@ const App: FunctionComponent = () => {
 					<div className="flex flex-col items-center justify-start text-center text-4xl md:text-29xl text-gray-100 font-worcester-serial">
 						<Intro openContactForm={openContactForm} />
 						<About ref={aboutRef} />
-						<Filmography />
+						{/* <Filmography /> */}
+						<MovieList />
 						<Interviews />
 						<Life />
 						<News />
-						<Brands />
+						<BrandSection />
 						<Booking openContactForm={openContactForm} />
 						<Newsletter openContactForm={openContactForm} />
 					</div>

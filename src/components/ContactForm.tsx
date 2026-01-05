@@ -35,7 +35,7 @@ const ContactForm: FunctionComponent<ContactFormType> = ({ className = "", onClo
 	const [isOpen, setIsOpen] = useState(false);
 	const [selectedService, setSelectedService] = useState<string | null>(null);
 	return (
-		<div className={`w-full relative bg-silver overflow-y-auto flex flex-col items-center justify-center text-white py-5 px-8 box-border gap-3 max-w-full max-h-full overflow-auto text-center text-xl text-gray-200 font-worcester-serial ${className}`}>
+		<div className={`w-full relative bg-silver overflow-y-auto flex flex-col items-center justify-center text-white py-5 px-8 box-border gap-3 max-w-full max-h-full overflow-auto text-center text-xl font-worcester-serial ${className}`}>
 			<div className="self-stretch flex flex-col items-start justify-center gap-[16.4px]">
 				<div className="self-stretch flex flex-col items-start justify-start gap-[10.9px]">
 					<div className="self-stretch flex flex-col items-center justify-start">
@@ -46,7 +46,7 @@ const ContactForm: FunctionComponent<ContactFormType> = ({ className = "", onClo
 						<div className="self-stretch relative">From feature films to keynote talks, let’s create something unforgettable.</div>
 					</div>
 				</div>
-				<div className="self-stretch rounded-[16.4px] bg-seashell text-darkolivegreen overflow-hidden flex flex-col items-start justify-center py-[13.7px] px-[23.9px] gap-4 text-left text-sm font-nunito">
+				<div className="self-stretch rounded-[16.4px] bg-gradient-to-br bg-seashell text-darkolivegreen overflow-hidden flex flex-col items-start justify-center py-[13.7px] px-[23.9px] gap-4 text-left text-sm font-nunito">
 					<div className="self-stretch flex flex-col items-start justify-start gap-[8.2px]">
 						<div className="self-stretch flex flex-row items-start justify-start">
 							<div className="flex-1 relative leading-[10.94px] font-semibold">Name</div>
@@ -135,7 +135,7 @@ const ContactForm: FunctionComponent<ContactFormType> = ({ className = "", onClo
 				<div className="flex flex-col md:flex-row items-center justify-center gap-[5.5px]">
 					{/* <img className="w-[34.4px] rounded-[41.27px] h-[32.8px] overflow-hidden shrink-0" alt="" src="tabler:mail.svg" /> */}
 					<FaEnvelope size={24} />
-					<div className="relative leading-[16.4px]">bament@gmail.com</div>
+					<div className="relative leading-[16.4px]">info@bammybestowed.com</div>
 				</div>
 				<div className="flex flex-col md:flex-row items-center justify-start gap-[5.5px]">
 					{/* <img className="w-[32.8px] rounded-[29.73px] h-[32.8px] overflow-hidden shrink-0" alt="" src="ph:phone-fill.svg" /> */}

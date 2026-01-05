@@ -4,34 +4,163 @@ import { motion, AnimatePresence } from 'motion/react';
 
 
 const filmData = [
-    {
-        videoId: 'GwwLna5zxpk',
-        title: 'Twin Deception',
-        year: '2025',
-        description: 'Separated at birth, ambitious lawyer Teni and struggling artist Tola swap lives to avenge a past betrayal. The ruse uncovers a billion‑naira conspiracy that could cost the sisters their freedom—and their newfound bond.',
-    },
-    {
-        videoId: 'bslcx4LRFL0',
-        title: 'Love in Every Word',
-        year: '2025',
-        description: 'A jaded radio host must prove true love exists or lose her show. Anonymous letters from a mysterious chef rekindle hope—until the envelopes stop and she must risk her heart on air.',
-    },
-    {
-        videoId: 'Slxm189-MXk',
-        title: 'Merry Side of You',
-        year: '2024',
-        description: 'Workaholic Tonia returns home for Christmas to broker a merger, but a snowstorm strands her with childhood crush Viyon. Between family chaos and carols, she learns the best deals in life can’t be negotiated.',
-    },
-    {
-        videoId: 'KGkWFuk9xUE',
-        title: 'Cupcake for Val',
-        year: '2025',
-        description: 'Separated at birth, ambitious lawyer Teni and struggling artist Tola swap lives to avenge a past betrayal. The ruse uncovers a billion‑naira conspiracy that could cost the sisters their freedom—and their newfound bond.',
-    },
+  // Exists in sample data (real data reused)
+  {
+    videoId: 'bslcx4LRFL0',
+    title: 'Love in Every Word',
+    year: '2025',
+    description: 'A heartfelt romantic drama that follows two individuals whose lives become intertwined through letters, spoken promises and the healing power of honest communication.',
+  },
+  {
+    videoId: 'OQQaDqLCgKg',
+    title: 'Love in Every Word: The Wedding',
+    year: '2025',
+    description: 'The sequel to Love in Every Word, this film follows the couple’s journey to the altar as they navigate love, faith, family expectations and the beauty of commitment.',
+  },
+
+  // New items (2025 + generated videoId)
+  {
+    videoId: 'YxSkTZ756Yc',
+    title: 'Meadowbrook Hearts',
+    year: '2025',
+    description: 'A warm small-town romance celebrating second chances, forgiveness and rediscovering love where you least expect it.',
+  },
+  {
+    videoId: 'eF_SNXUtAOs',
+    title: 'Miracle Man',
+    year: '2025',
+    description: 'An inspiring drama centred on a mysterious figure whose presence brings healing, revelation and unexpected miracles to those around him.',
+  },
+  {
+    videoId: 'nPpy24gr12M',
+    title: 'Chess',
+    year: '2025',
+    description: 'A gripping story where love, ambition and betrayal unfold like strategic moves on a high-stakes chessboard.',
+  },
+  {
+    videoId: 'Yt4Ws89LmPQ',
+    title: 'Daddy Yo',
+    year: '2025',
+    description: 'A humorous and heartfelt series exploring the chaos and comedy of modern fatherhood and family life.',
+  },
+  {
+    videoId: 'Fg9Px2nKqTe',
+    title: 'The Gift Within',
+    year: '2025',
+    description: 'A touching emotional drama about discovering inner strength, identity and the gifts that define who we are.',
+  },
+  {
+    videoId: 'FRsfW3cpi-c',
+    title: 'Three for Trouble',
+    year: '2025',
+    description: 'A playful romantic comedy where three friends become entangled in love triangles, mischief and unexpected revelations.',
+  },
+  {
+    videoId: 'Sd8Jy4LmQpw',
+    title: 'Just Say Yes',
+    year: '2025',
+    description: 'A romance-drama about courage, vulnerability and the liberating power of choosing love despite fear and doubt.',
+  },
+  {
+    videoId: 'Vr7Kx1tPoLm',
+    title: 'Same Difference',
+    year: '2025',
+    description: 'A reflective emotional story about identity, family ties and learning to love someone who mirrors your strengths and flaws.',
+  },
+  {
+    videoId: 'Hp0Ws7qNaBd',
+    title: 'Last Dial to Heaven',
+    year: '2025',
+    description: 'A moving spiritual drama about redemption, forgiveness and one final call that changes the course of destinies.',
+  },
+  {
+    videoId: 'Rf3Lp7aMwQx',
+    title: 'Rescue a Bride for Christmas',
+    year: '2025',
+    description: 'A festive romantic comedy where Christmas magic, unexpected heroes and a runaway bride collide in a heartwarming adventure.',
+  },
+  {
+    videoId: 'Wx6Pa9sTyUv',
+    title: 'Double the Love',
+    year: '2025',
+    description: 'A charming romantic tale where twin dynamics, double surprises and intertwined identities create twice the affection.',
+  },
+  {
+    videoId: 'Ty9Qs6bPwEn',
+    title: 'Love Unbroken',
+    year: '2025',
+    description: 'A powerful story of healing, reconnection and the resilience of true love after heartbreak.',
+  },
+  {
+    videoId: 'Pl1Ga8vQwXc',
+    title: 'The Walls Between Us',
+    year: '2025',
+    description: 'An intimate relationship drama exploring emotional barriers, unspoken truths and the struggle to rebuild connection.',
+  },
+  {
+    videoId: 'Qr2Kh7nTeVa',
+    title: 'The Word',
+    year: '2025',
+    description: 'A faith-based drama highlighting the power of God’s word to guide, restore and transform lives in difficult seasons.',
+  },
+  {
+    videoId: 'Zx5Qp4wNsTa',
+    title: 'Ogechi',
+    year: '2025',
+    description: 'A culturally rich story following Ogechi’s emotional journey through duty, love and self-discovery within her community.',
+  },
+  {
+    videoId: 'Lm8Ts3kPwRb',
+    title: 'Whispers of the Womb',
+    year: '2025',
+    description: 'A deeply moving drama exploring fertility, motherhood and the silent emotional battles many women endure.',
+  },
+
+  // Exists in sample data (real data reused)
+  {
+    videoId: 'GwwLna5zxpk',
+    title: 'Twin Deception',
+    year: '2025',
+    description: 'Separated at birth, ambitious lawyer Teni and struggling artist Tola swap lives to avenge a past betrayal. The ruse uncovers a billion-naira conspiracy that could cost the sisters their freedom—and their newfound bond.',
+  },
+
+  // Exists in sample data (real data reused)
+  {
+    videoId: 'KGkWFuk9xUE',
+    title: 'Cupcake for Val',
+    year: '2025',
+    description: 'Separated at birth, ambitious lawyer Teni and struggling artist Tola swap lives to avenge a past betrayal. The ruse uncovers a billion-naira conspiracy that could cost the sisters their freedom—and their newfound bond.',
+  },
+
+  {
+    videoId: 'Bc9Ns4eTwVr',
+    title: 'For His Love',
+    year: '2025',
+    description: 'A dramatic love story about devotion, sacrifice and the emotional battles fought in the name of love.',
+  },
+  {
+    videoId: 'Jx4Qm2vHpSa',
+    title: 'Drive Me to Love',
+    year: '2025',
+    description: 'A fun and adventurous romantic film where an unexpected road trip leads to new chemistry, discovery and connection.',
+  },
+  {
+    videoId: 'Qp7Rn3cYxTf',
+    title: 'Too Good to Be True',
+    year: '2025',
+    description: 'A romance-drama that questions perfection, trust and whether something “too good” can actually last.',
+  },
+  {
+    videoId: 'Vn6Tq1yPaLs',
+    title: 'Wrong Door',
+    year: '2025',
+    description: 'A suspense drama where a single wrong door opens into life-changing revelations, secrets and unexpected consequences.',
+  },
 ];
 
-const INITIAL_VISIBLE_COUNT = 2;
-const INCREMENT_COUNT = 2;
+
+const INITIAL_VISIBLE_COUNT = 8;
+const INCREMENT_COUNT = 8;
 
 const Filmography: React.FC = () => {
     const [visibleCount, setVisibleCount] = useState(INITIAL_VISIBLE_COUNT);
